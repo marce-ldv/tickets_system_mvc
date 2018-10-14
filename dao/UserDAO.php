@@ -7,8 +7,7 @@
 	{
 		//protected $table = 'users';
 
-		public function addUser(User $user)
-		{
+		public function addUser(User $user){
 			$query = 'INSERT INTO users (username, pass, name_user, email, role_user) 
 			VALUES (:username, :pass, :name_user, :email, :role_user)';
 
@@ -40,7 +39,7 @@
 
 			if($user){
 				if($user->getPassword == $password){
-					
+					//logueaste
 				}
 			}
 		}

@@ -18,31 +18,22 @@
 			$urlSeparada= explode('/', $actual_link);
 			$urlSeparada= array_filter($urlSeparada);
 
-			if (!empty($urlSeparada)) {
+			if (!empty($urlSeparada)) 
 				$this->controladora= ucwords(array_shift($urlSeparada));
-				
-			}	else{
-				$this->controladora= 'ControllerUser';
+			else
+				$this->controladora= 'ControllerUser'; //UserController creo
 
-			}
-
-			if (!empty($urlSeparada)) {
+			if (!empty($urlSeparada))
 				$this->metodo= array_shift($urlSeparada);
-			
-			}	else{
+			else
 				$this->metodo= 'viewLogin';
-
-			}
 
 			if ($this->getMethod() === "GET") {
 				if (!empty($urlSeparada)) {
 					$this->parametros= $urlSeparada;
-				
 				}
-			
-			}	else{
+			}else{
 				$this->parametros= $_POST;
-
 			}
 
 		}

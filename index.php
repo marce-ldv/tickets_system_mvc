@@ -6,8 +6,9 @@
 	/**
 	 * Archivos necesarios de inicio
 	 */
-	require 'Config/autoload.php';
-	require 'Config/config.php';
+	require 'config/autoload.php';
+	require 'config/config.php';
+	//include_once 'config/router.php';
 
 	/**
 	 * Alias
@@ -20,7 +21,7 @@
 	Autoload::start();
 	//header('location:ROOT. view\login.php');
 	//include(ROOT . 'view\login.php');
-	$router= new Router(new Request());
+	//$router= new Router(new Request());	
 	$userDAO = new UserDAO();
 
 	/*

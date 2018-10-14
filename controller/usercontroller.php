@@ -9,12 +9,16 @@ class UserController{
         $this->userDao = new UserDao();
     }
 
+    public function index(){
+        include(ROOT . 'view\login.php');
+    }
+
     public function login($name,$pass){
-        $this->userDao->login($name,$pass);
+        //$this->userDao->login($name,$pass);
     }
 
     public function register(){
-        
+        $this->userDao->addUser($usr);
     }
 
     public function viewLogin(){
