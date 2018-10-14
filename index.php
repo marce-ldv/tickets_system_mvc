@@ -20,7 +20,7 @@
 	Autoload::start();
 	//header('location:ROOT. view\login.php');
 	//include(ROOT . 'view\login.php');
-
+	$router= new Router(new Request());
 	$userDAO = new UserDAO();
 
 	/*
