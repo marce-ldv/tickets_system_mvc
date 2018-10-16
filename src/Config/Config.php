@@ -5,7 +5,7 @@ namespace Config;
 
 define("DB_NAME", "baseautos");
 define("DB_USER", "root");
-define("DB_PASS", "micaddyes19");
+define("DB_PASS", "mardelplata");
 define("DB_HOST", "localhost");
 
 // Constantes front

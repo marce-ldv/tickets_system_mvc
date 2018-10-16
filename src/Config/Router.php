@@ -7,7 +7,7 @@ class Router
 
     public static function direccionar(Request $request)
     {
-        $controlador = $request->getControlador() . 'Controladora';
+        $controlador = $request->getControlador() . 'Controller';
         $metodo = $request->getMetodo();
         $parametros = $request->getParametros();
 
@@ -19,7 +19,7 @@ class Router
 
     private static function instanciar($controlador)
     {
-        $mostrar = "Controladoras\\" . $controlador;
+        $mostrar = "Controller\\" . $controlador;
         return new $mostrar;
     }
 

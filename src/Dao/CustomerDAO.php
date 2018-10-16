@@ -1,9 +1,9 @@
-<?php namespace dao;
+<?php 
+namespace dao;
 
 use DAO\Connection as Connection;
 //use Model\
 
-class CustomerDAO extends Connection
-{
-
+public class CustomerDAO extends Connection{
+    
 }

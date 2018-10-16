@@ -48,7 +48,7 @@ class Request
          * echo '</pre>';
          */
 
-        $ArregloUrl = array_filter($urlToArray);
+        $arrayUrl = array_filter($urlToArray);
         /**
          * Filtra elementos de un array usando una función de devolución de llamada.
          * Recorre cada valor de array, pasándolos a la función callback.
@@ -56,19 +56,19 @@ class Request
          * Las claves del array se conservan.
          */
 
-        if (empty($ArregloUrl)) {
+        if (empty($arrayUrl)) {
             // Si Arreglo Url esta vacio, cargo el controlador por defecto y  cargo el index por defecto.
-            $this->controlador = 'usuario';
+            $this->controlador = 'user';
             $this->metodo = 'index';
         } else {
             // Quito el primer elemento del array y lo uso como controlador y el segundo lo uso como metodo
-            $this->controlador = ucwords(array_shift($ArregloUrl));
-            $this->metodo = array_shift($ArregloUrl);
+            $this->controlador = ucwords(array_shift($arrayUrl));
+            $this->metodo = array_shift($arrayUrl);
         }
 
         if ($metodoRequest == 'GET') {
-            if (!empty($ArregloUrl)) {
-                $this->parametros = $ArregloUrl;
+            if (!empty($arrayUrl)) {
+                $this->parametros = $a;
             }
         } else {
             if (!empty($_POST)) {

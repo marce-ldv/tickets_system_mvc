@@ -1,4 +1,6 @@
-<?php namespace model;
+<?php 
+
+namespace model;
 
 class User{
     private $userId;

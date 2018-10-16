@@ -1,10 +1,9 @@
 <?php
 
-namespace Controladoras;
+namespace Controller;
 
 
-class UsuarioControladora
-{
+class UserController{
 
     protected $userDao;
 
@@ -14,7 +13,7 @@ class UsuarioControladora
 
    public function index()
     {
-        require(URL_VISTA . "login.php");
+        require(URL_VISTA . "home.php");
     }
 
     public function login($name,$pass){
@@ -35,5 +34,5 @@ class UsuarioControladora
 
 
 
-    
+
 }

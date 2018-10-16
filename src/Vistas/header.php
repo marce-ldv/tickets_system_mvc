@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="<?= URL_CSS . 'animate.min.css'?>" type="text/css">
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="<?= URL_CSS . 'style.css'?>" type="text/css">
+    <link rel="stylesheet" href="<?= URL_CSS .'scrolling-nav.css' ?>" type="text/css">
 
 	<link rel="stylesheet" href="<?= URL_CSS . 'tooplate-style.css'?>">   
 	<!-- Custom Fonts -->
