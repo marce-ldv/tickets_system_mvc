@@ -1,9 +1,10 @@
-<?php namespace controller;
+<?php
+namespace controller;
 use dao\UserDAO as UserDao;
 
 class UserController{
 
-    $private userDao;
+    private $userDao;
 
     public function __construct(){
         $this->userDao = new UserDao();
@@ -13,9 +14,17 @@ class UserController{
         include(ROOT . 'view\login.php');
     }
 
-    public function login($name,$pass){
-        //$this->userDao->login($name,$pass);
-    }
+    /*En el if compruebo si user tiene datos, en caso que los contenga hago una validacion
+		de password, no necesito validar tambien el username ya que es el que viene en la variable user */
+		public function login($username, $password) {
+			$user = $this->userDao->read($user);
+
+			if($user){
+				if($user->getPassword == $password){
+					//logueaste
+				}
+			}
+		}
 
     public function register(){
         $this->userDao->addUser($usr);
@@ -31,5 +40,5 @@ class UserController{
 
 
 
-    
+
 }

@@ -8,14 +8,15 @@
 	 */
 	require 'config/autoload.php';
 	require 'config/config.php';
-	//include_once 'config/router.php';
 
 	/**
 	 * Alias
 	 */
-	use Config\Autoload as Autoload;
-	use Model\User as User;
-    use DAO\UserDAO as UserDAO;
+	use config\Autoload as Autoload;
+	use config\Router as Router;
+	use config\Request as Request;
+	use model\User as User;
+    use dao\UserDAO as UserDAO;
     	
     //llama al metodo start del autoload
 	Autoload::start();

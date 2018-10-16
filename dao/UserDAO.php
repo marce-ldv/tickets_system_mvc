@@ -32,17 +32,7 @@
 			return $connection->lastInsertId();
 		}
 
-		/*En el if compruebo si user tiene datos, en caso que los contenga hago una validacion
-		de password, no necesito validar tambien el username ya que es el que viene en la variable user */
-		public function login($username, $password) {
-			$user = $this->userDao->read($user);
-
-			if($user){
-				if($user->getPassword == $password){
-					//logueaste
-				}
-			}
-		}
+		
 				
 	}
 ?>

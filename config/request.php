@@ -18,10 +18,13 @@
 			$urlSeparada= explode('/', $actual_link);
 			$urlSeparada= array_filter($urlSeparada);
 
-			if (!empty($urlSeparada)) 
+			if (!empty($urlSeparada)) {
 				$this->controladora= ucwords(array_shift($urlSeparada));
-			else
-				$this->controladora= 'ControllerUser'; //UserController creo
+				//$this->metodo = array_shift($urlSeparada);
+			}else{
+				$this->controladora= 'UserController';
+				$this->metodo = 'index';
+			}
 
 			if (!empty($urlSeparada))
 				$this->metodo= array_shift($urlSeparada);
