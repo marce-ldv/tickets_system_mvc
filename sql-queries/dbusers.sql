@@ -11,6 +11,17 @@ CREATE TABLE users(
     CONSTRAINT pk_id_user PRIMARY KEY (id_user)
 );
 
+CREATE TABLE customers(
+	id_customer INT AUTO_INCREMENT,
+	name VARCHAR(50) NOT NULL,
+	surname VARCHAR(50) NOT NULL,
+	dni VARCHAR(50),
+	id_fb INT,
+	CONSTRAINT pk_id_customer PRIMARY KEY (id_customer),
+	CONSTRAINT unq_dni UNIQUE (dni),
+	CONSTRAINT unq_fb UNIQUE (id_fb)
+);
+
 INSERT INTO users (username,pass,name_user,email,role_user) VALUES
 ('tefaltasopa','1234','Marcelo','marcefs@gmail.com','admin');
 INSERT INTO users (username,pass,name_user,email,role_user) VALUES

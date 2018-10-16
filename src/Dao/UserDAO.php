@@ -5,10 +5,12 @@
 
 	class UserDAO extends Connection
 	{
+		private $table = "users"; /* se agregar para el dia de mañana modificar una vez el nombre de la tabla */
+		private $listado = []; //aca van los objetos instanciados desde la base de datos
 		//protected $table = 'users';
 
 		public function addUser(User $user){
-			$query = 'INSERT INTO users (username, pass, name_user, email, role_user) 
+			$query = 'INSERT INTO $this->table (username, pass, name_user, email, role_user)  -- deberia funcionar
 			VALUES (:username, :pass, :name_user, :email, :role_user)';
 
 			$pdo = new Connection();
