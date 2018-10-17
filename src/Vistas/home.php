@@ -1,12 +1,5 @@
 <?php  include(URL_VISTA . 'navbar.php'); ?>
 
-    <header class="bg-primary text-white">
-      <div class="container text-center">
-        <h1>Welcome to Scrolling Nav</h1>
-        <p class="lead">A landing page template freshly redesigned for Bootstrap 4</p>
-      </div>
-    </header>
-
     <section id="about">
       <div class="container">
         <div class="row">
@@ -46,13 +39,6 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
-      </div>
-      <!-- /.container -->
-    </footer>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -64,4 +50,3 @@
     <!-- Custom JavaScript for this theme -->
     <script src="js/scrolling-nav.js"></script>
 
-<?php  include(URL_VISTA . 'footer.php') ?>

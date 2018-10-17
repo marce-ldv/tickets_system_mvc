@@ -4,7 +4,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-center">
-					<h1 class="bottombrand wow flipInX">Hi guys</h1>
+					<h1 class="bottombrand wow flipInX">Tickets System</h1>
 					<p>
 						&copy; 2018 Final
 					</p>

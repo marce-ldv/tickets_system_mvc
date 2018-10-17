@@ -33,4 +33,4 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body style="background-color:silver">
+<body id="page-top" style="background-image: url(<?= URL_IMG . 'Background.jpg' ?>);">
