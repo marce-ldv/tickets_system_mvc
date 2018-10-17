@@ -11,9 +11,7 @@ class Customer
 
 
 
-	public function __construct($name, $surname, $dni, $id_facebook)
-	{
-		$this->id_customer = $id_customer;
+	public function __construct($name, $surname, $dni, $id_facebook){
 		$this->name = $name;
 		$this->surname = $surname;
 		$this->dni = $dni;
