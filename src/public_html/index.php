@@ -37,11 +37,11 @@ error_reporting(E_ALL);
 require_once '../Config/Config.php';
 require_once '../Config/Autoload.php';
 
-Config\Autoload::iniciar();
+Config\Autoload::start();
 
-include URL_VISTA . 'header.php'; //El header es estático para todas las páginas.
+include URL_VIEW . 'header.php'; //El header es estático para todas las páginas.
 
  
 Config\Router::direccionar(new Config\Request());
 
-include URL_VISTA . 'footer.php'; //El footer es estático para todas las páginas.
+include URL_VIEW . 'footer.php'; //El footer es estático para todas las páginas.

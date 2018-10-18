@@ -10,26 +10,15 @@ class UserController{
     public function __construct(){}
 
     public function index(){
-        require(URL_VISTA . "home.php");
+        require(URL_VIEW . "home.php");
     }
 
     public function login(){
-        require(URL_VISTA . "login.php"); 
+        require(URL_VIEW . "login.php"); 
     }
 
     public function register(){
-          require(URL_VISTA . "register.php");      
+          require(URL_VIEW . "register.php");      
     }
-
-    public function viewLogin(){
-        include(ROOT . 'view\login.php');
-    }
-
-    public function viewRegister(){
-        include(ROOT . 'view\registrarse.php');
-    }
-
-
-
 
 }

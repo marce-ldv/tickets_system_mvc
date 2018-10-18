@@ -1,4 +1,4 @@
-<?php  include(URL_VISTA . 'navbar.php'); ?>
+<?php  include(URL_VIEW . 'navbar.php'); ?>
 
     <section id="about">
       <div class="container">

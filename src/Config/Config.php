@@ -10,11 +10,11 @@ define("DB_HOST", "localhost");
 
 // Constantes front
 define('ROOT',  dirname(__DIR__) . "/");
-define("URL_VISTA",  ROOT . 'Vistas/');
+define("URL_VIEW",  ROOT . 'View/');
 define("URL_FONT_AWESOME", '/font-awesome/');
 define("URL_FONTAWESOME", '/fontawesome/');
 define("URL_CSS", '/css/');
-define("URL_ESTILO", '/estilo/');
+define("URL_STYLE", '/estilo/');
 define("URL_JS", '/js/');
 define("URL_SLICK", '/slick/');
 define("URL_IMG", '/img/');

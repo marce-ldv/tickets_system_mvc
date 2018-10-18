@@ -5,7 +5,7 @@ namespace Config;
 class Autoload
 {
 
-    public static function iniciar()
+    public static function start()
     {
         spl_autoload_register(function ($class) {
 

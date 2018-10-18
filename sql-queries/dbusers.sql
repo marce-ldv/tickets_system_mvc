@@ -7,7 +7,7 @@ CREATE TABLE users(
     pass VARCHAR(100),
     email VARCHAR(50),
     role_user VARCHAR(50),
-    CONSTRAINT pk_id_user PRIMARY KEY (id_user)
+    CONSTRAINT pk_id_user PRIMARY KEY (id_user),
     CONSTRAINT uniq_username UNIQUE (username)
 );
 
