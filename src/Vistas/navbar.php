@@ -14,7 +14,7 @@
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <?php if(isset($_SESSION['rol'])) {?>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
                     <nav id="primary_nav_wrap">
                         <ul class="nav navbar-nav navbar-right" >
                             <li>
@@ -45,10 +45,10 @@
                             <a class="page-scroll" style="color:white" href="/">Inicio</a>
                         </li>
                         <li>
-                            <a class="page-scroll" style="color:white" href="/user/login/">Login</a>
+                            <a class="page-scroll " style="color:white" href="/user/login/">Login</a>
                         </li>
                         <li>
-                            <a class="page-scroll" style="color:white" href="/user/register/">Register</a>
+                            <a class="page-scroll" style="color:white" href="#">Boton</a>
                         </li>
                     </ul>
                 </nav>

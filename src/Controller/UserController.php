@@ -22,8 +22,7 @@ class UserController{
     }
 
     public function register(){
-        require(URL_VISTA . "register.php");   
-        //$this->userDao->addUser($usr);
+        $this->userDao->addUser($usr);
     }
 
     public function viewLogin(){

@@ -4,21 +4,21 @@ namespace Model;
 class Customer  
 {
 	private $id_customer;
+	private $id_user;
 	private $name;
 	private $surname;
 	private $dni;
-	private $id_facebook;
 
 
+	
 
-	public function __construct($name, $surname, $dni, $id_facebook)
+	public function __construct($id_user, $name, $surname, $dni)
 	{
+		$this->id_user = $id_user;
 		$this->name = $name;
 		$this->surname = $surname;
 		$this->dni = $dni;
-		$this->id_facebook = $id_facebook;
 	}
-
 
     /**
      * @return mixed
@@ -36,6 +36,26 @@ class Customer
     public function setIdCustomer($id_customer)
     {
     	$this->id_customer = $id_customer;
+
+    	return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdUser()
+    {
+    	return $this->id_user;
+    }
+
+    /**
+     * @param mixed $id_user
+     *
+     * @return self
+     */
+    public function setIdUser($id_user)
+    {
+    	$this->id_user = $id_user;
 
     	return $this;
     }
@@ -96,26 +116,6 @@ class Customer
     public function setDni($dni)
     {
     	$this->dni = $dni;
-
-    	return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getIdFacebook()
-    {
-    	return $this->id_facebook;
-    }
-
-    /**
-     * @param mixed $id_facebook
-     *
-     * @return self
-     */
-    public function setIdFacebook($id_facebook)
-    {
-    	$this->id_facebook = $id_facebook;
 
     	return $this;
     }

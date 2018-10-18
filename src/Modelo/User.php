@@ -5,18 +5,31 @@ namespace model;
 class User{
 
     private $id_user;
-    private $username;
+    private $nickname;
     private $email;
     private $password;
-    private $role;
+    private $id_role;
+    private $id_facebook;
 
-    public function __construct($username, $email, $password, $role)
+
+    /**
+     * Class Constructor
+     * @param    $id_user   
+     * @param    $nickname   
+     * @param    $email   
+     * @param    $password   
+     * @param    $id_role   
+     */
+    public function __construct($nickname, $email, $password, $id_role)
     {
-        $this->username = $username;
+        $this->nickname = $nickname;
         $this->email = $email;
         $this->password = $password;
-        $this->role = $role;
+        $this->id_role = $id_role;
     }
+
+
+
 
     /**
      * @return mixed
@@ -41,19 +54,19 @@ class User{
     /**
      * @return mixed
      */
-    public function getUsername()
+    public function getNickname()
     {
-        return $this->username;
+        return $this->nickname;
     }
 
     /**
-     * @param mixed $name
+     * @param mixed $nickname
      *
      * @return self
      */
-    public function setUsername($name)
+    public function setNickname($nickname)
     {
-        $this->username = $username;
+        $this->nickname = $nickname;
 
         return $this;
     }
@@ -101,19 +114,19 @@ class User{
     /**
      * @return mixed
      */
-    public function getRole()
+    public function getIdRole()
     {
-        return $this->role;
+        return $this->id_role;
     }
 
     /**
-     * @param mixed $role
+     * @param mixed $id_role
      *
      * @return self
      */
-    public function setRole($role)
+    public function setIdRole($id_role)
     {
-        $this->role = $role;
+        $this->id_role = $id_role;
 
         return $this;
     }

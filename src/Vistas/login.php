@@ -4,11 +4,11 @@
 <div class="container" style="margin-top:30px;">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 text-center">
-			<h2 class="section-heading" style="color:white">LOGUEATE</h2>
+			<h2 class="section-heading" style="color:white">REGISTRARSE</h2>
 			<hr class="primary">
 			<p>
 				<strong style="color:white">
-					Logueate.
+					Registrate.
 				</strong>
 			</p>
 			<div class="regularform">
@@ -18,11 +18,18 @@
 						Thank you!
 					</div>
 				</div>
-				<form id="form_r" method="post" action="/cuenta/registrar" id="contactform" class="text-left " autocomplete="off" enctype= 'multipart/form-data'>
+				<form id="form_r" method="post" action="#" id="contactform" class="text-left "autocomplete="off" enctype= 'multipart/form-data'>
 
-					<input required name="nickname" type="text" class="col-md-12 norightborder" placeholder="Nombre de usuario">
 
-					<input  style="display: none" name="nickname" autocomplete="off" type="text" class="col-md-12 norightborder" placeholder="nombre de usuario">
+					<input required name="name" type="given-name" class="col-md-6 norightborder btn1" placeholder="Nombre">
+
+					<input required name="surname" type="family-name" class="col-md-6 norightborder btn1" placeholder="Apellido">
+					
+					<input required name="dni" type="number" min="1" max="999999999" class="col-md-6 norightborder btn1" placeholder="DNI">
+
+					<input required name="date" type="date" class="col-md-6 norightborder btn1" placeholder="">
+
+					<input required name="email" type="email" class="col-md-12 norightborder btn1" placeholder="Correo electronico">
 
 					<p style="text-align: center;">
 						<strong style="color:white">
@@ -30,12 +37,15 @@
 						</strong>
 					</p>
 
+					<input  style="display: none" name="nickname" autocomplete="off" type="text" class="col-md-6 norightborder btn1" placeholder="Nickname de Usuario">
 					
-					<input  style="display: none" name="pass" autocomplete="off" type="password" class="col-md-12 norightborder" placeholder="Contraseña">
+					<input  style="display: none" name="pass" autocomplete="off" type="password" class="col-md-6 norightborder btn1" placeholder="Contraseña">
 
-					<input required name="pass" autocomplete="off" type="password" class="col-md-12 norightborder" placeholder="Contraseña">
+					<input required name="nickname" autocomplete="off" type="text" class="col-md-6 norightborder btn1" placeholder="Nombre de Usuario">
 
-					<button type="submit" class="contact submit btn btn-primary btn-xl pull-right " style="  border-radius:15px; ">Loguearse</button>
+					<input required name="pass" autocomplete="off" type="password" class="col-md-6 norightborder btn1" placeholder="Contraseña">
+
+					<button type="submit" class="contact submit btn btn-primary btn-xl pull-right " style="  border-radius:15px;">Registrarse</button>
 
 				</form>
 			</div>

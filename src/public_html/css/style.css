@@ -1086,8 +1086,8 @@ ul .tline-holder>li {
 	height:150px;
 }
 .regularform input.norightborder {
-	border-right:0;
-	border-radius: 20px;
+	border-right:3;
+	border-radius: 30px;
 }
 .done {
 	display:none;
@@ -1339,4 +1339,33 @@ input.error,textarea.error {
 ::placeholder { 
     color: gray; 
     opacity: 1;
+}
+
+.btn1 
+{
+  background: #8e4d2d;
+  background-image: -webkit-linear-gradient(top, #8e4d2d, #8e4d2d);
+  background-image: -moz-linear-gradient(top, #8e4d2d, #8e4d2d);
+  background-image: -ms-linear-gradient(top, #8e4d2d, #8e4d2d);
+  background-image: -o-linear-gradient(top, #8e4d2d, #8e4d2d);
+  background-image: linear-gradient(to bottom, #8e4d2d, #8e4d2d);
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 0px 8px 0px 8px;
+  text-decoration: none;
+}
+
+.btn1:hover 
+{
+  background:#ce9173;
+  background-image: -webkit-linear-gradient(top, #ce9173, #ce9173);
+  background-image: -moz-linear-gradient(top, #ce9173, #ce9173);
+  background-image: -ms-linear-gradient(top, #ce9173, #ce9173);
+  background-image: -o-linear-gradient(top, #ce9173, #ce9173);
+  background-image: linear-gradient(to bottom, #ce9173, #ce9173);
+  text-decoration: none;
 }

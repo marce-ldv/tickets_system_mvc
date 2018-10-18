@@ -4,10 +4,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
-	<meta name="author" content="">head</title>
+	<meta name="author" content="">comentarios</title>
 	<!-- Bootstrap Core CSS -->
 	<link rel="stylesheet" href="<?= URL_CSS .'bootstrap.min.css' ?>" type="text/css">
-	<link rel="stylesheet" href="<?= URL_CSS .'bootstrap.min' ?>" type="text/css">
 	<!-- Plugin CSS -->
 	<link rel="stylesheet" href="<?= URL_CSS . 'animate.min.css'?>" type="text/css">
 	<!-- Custom CSS -->
@@ -20,7 +19,6 @@
 	<link rel="stylesheet" href="<?= URL_FONT_AWESOME . '/css/'. 'font-awesome.min.css' ?>" type="text/css">
 
 	<!-- https://getbootstrap.com/ -->
-
 	<link rel="stylesheet" href="<?= URL_FONTAWESOME . '/css/' . 'fontawesome-all.min.css'?>" type="text/css"> <!-- https://fontawesome.com/ -->
 	<link rel="stylesheet" type="text/css"href="<?= URL_SLICK . 'slick.css'?>">                       <!-- http://kenwheeler.github.io/slick/ -->
 	<link rel="stylesheet" type="text/css" href="<?=  URL_SLICK .'slick-theme.css'?>"/>
