@@ -11,13 +11,14 @@ class UserController{
     {
     }
 
-   public function index()
+    public function index()
     {
         require(URL_VISTA . "home.php");
     }
 
-    public function login($name,$pass){
-        //$this->userDao->login($name,$pass);
+    public function login()
+    {
+        require(URL_VISTA . "login.php");        
     }
 
     public function register(){

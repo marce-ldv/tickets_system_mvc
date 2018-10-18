@@ -45,7 +45,7 @@
                             <a class="page-scroll" style="color:white" href="/">Inicio</a>
                         </li>
                         <li>
-                            <a class="page-scroll" style="color:white" href="#">Boton</a>
+                            <a class="page-scroll" style="color:white" href="user/login/">Boton</a>
                         </li>
                         <li>
                             <a class="page-scroll" style="color:white" href="#">Boton</a>

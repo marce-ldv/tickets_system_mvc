@@ -1087,6 +1087,7 @@ ul .tline-holder>li {
 }
 .regularform input.norightborder {
 	border-right:0;
+	border-radius: 20px;
 }
 .done {
 	display:none;

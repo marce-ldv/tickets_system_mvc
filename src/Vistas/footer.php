@@ -1,6 +1,6 @@
 <!-- Section Footer
 	================================================== -->
-	<section class="bg-dark" style="margin-top: 30px;">
+	<section class="bg-dark">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-center">
