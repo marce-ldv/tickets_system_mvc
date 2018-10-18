@@ -1,142 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Register</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
-</head>
-<body>
-	
-	<div class="limiter">
-		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
-			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-				<form class="login100-form validate-form" action="controller/usercontroller.php" method="post">
-					<span class="login100-form-title p-b-49">
-						Register
-					</span>
+<?php  include(URL_VISTA . 'navbar.php') ;?>
 
-					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
-						<span class="label-input100">Username</span>
-						<input class="input100" type="text" name="username" placeholder="Type your username">
-						<span class="focus-input100" data-symbol="&#xf206;"></span>
-					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="pass" placeholder="Type your password">
-						<span class="focus-input100" data-symbol="&#xf190;"></span>
+<div class="container" style="margin-top:30px;">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 text-center">
+			<h2 class="section-heading" style="color:white">REGISTRARSE</h2>
+			<hr class="primary">
+			<p>
+				<strong style="color:white">
+					Registrate.
+				</strong>
+			</p>
+			<div class="regularform">
+				<div class="done">
+					<div class="alert alert-success">
+						<button type="button" class="close" data-dismiss="alert">×</button>
+						Thank you!
 					</div>
+				</div>
+				<form id="form_r" method="post" action="#" id="contactform" class="text-left "autocomplete="off" enctype= 'multipart/form-data'>
 
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<span class="label-input100">Name User</span>
-						<input class="input100" type="text" name="name_user" placeholder="Type your password">
-						<span class="focus-input100" data-symbol="&#xf190;"></span>
-					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<span class="label-input100">E-mail</span>
-						<input class="input100" type="email" name="email" placeholder="Type your password">
-						<span class="focus-input100" data-symbol="&#xf190;"></span>
-					</div>
+					<input required name="name" type="given-name" class="col-md-6 norightborder btn1" placeholder="Nombre">
 
-					<div>
-						<select require>
-							<!--<option value="">Choose One</option>-->
-							<option value="admin">Admin</option>
-							<option value="user">User</option>
-						</select>
-					</div>
+					<input required name="surname" type="family-name" class="col-md-6 norightborder btn1" placeholder="Apellido">
 					
-					<div class="text-right p-t-8 p-b-31">
-						<a href="#">
-							Forgot password?
-						</a>
-					</div>
+					<input required name="dni" type="number" min="1" max="999999999" class="col-md-6 norightborder btn1" placeholder="DNI">
+
+					<input required name="date" type="date" class="col-md-6 norightborder btn1" placeholder="">
+
+					<input required name="email" type="email" class="col-md-12 norightborder btn1" placeholder="Correo electronico">
+
+					<p style="text-align: center;">
+						<strong style="color:white">
+							Necesitamos que introduzcas un nombre de usuario y una contraseña.
+						</strong>
+					</p>
+
+					<input  style="display: none" name="nickname" autocomplete="off" type="text" class="col-md-6 norightborder btn1" placeholder="Nickname de Usuario">
 					
-					<div class="container-login100-form-btn">
-						<div class="wrap-login100-form-btn">
-							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
-								Register
-							</button>
-						</div>
-					</div>
+					<input  style="display: none" name="pass" autocomplete="off" type="password" class="col-md-6 norightborder btn1" placeholder="Contraseña">
 
-					<div class="txt1 text-center p-t-54 p-b-20">
-						<span>
-							Or Sign Up Using
-						</span>
-					</div>
+					<input required name="nickname" autocomplete="off" type="text" class="col-md-6 norightborder btn1" placeholder="Nombre de Usuario">
 
-					<div class="flex-c-m">
-						<a href="#" class="login100-social-item bg1">
-							<i class="fa fa-facebook"></i>
-						</a>
+					<input required name="pass" autocomplete="off" type="password" class="col-md-6 norightborder btn1" placeholder="Contraseña">
 
-						<a href="#" class="login100-social-item bg2">
-							<i class="fa fa-twitter"></i>
-						</a>
+					<button type="submit" class="contact submit btn btn-primary btn-xl pull-right " style="  border-radius:15px;">Registrarse</button>
 
-						<a href="#" class="login100-social-item bg3">
-							<i class="fa fa-google"></i>
-						</a>
-					</div>
-
-					<div class="flex-col-c p-t-155">
-						<span class="txt1 p-b-17">
-							Or Sign Up Using
-						</span>
-
-						<a href="#" class="txt2">
-							Sign Up
-						</a>
-					</div>
 				</form>
 			</div>
 		</div>
 	</div>
-	
-
-	<div id="dropDownSelect1"></div>
-	
-<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
-
-</body>
-</html>
+</div>

@@ -7,22 +7,18 @@ class UserController{
 
     protected $userDao;
 
-    public function __construct()
-    {
-    }
+    public function __construct(){}
 
-    public function index()
-    {
+    public function index(){
         require(URL_VISTA . "home.php");
     }
 
-    public function login()
-    {
-        require(URL_VISTA . "login.php");        
+    public function login(){
+        require(URL_VISTA . "login.php"); 
     }
 
     public function register(){
-        $this->userDao->addUser($usr);
+          require(URL_VISTA . "register.php");      
     }
 
     public function viewLogin(){

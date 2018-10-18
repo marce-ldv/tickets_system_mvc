@@ -23,7 +23,6 @@
 	<link rel="stylesheet" type="text/css"href="<?= URL_SLICK . 'slick.css'?>">                       <!-- http://kenwheeler.github.io/slick/ -->
 	<link rel="stylesheet" type="text/css" href="<?=  URL_SLICK .'slick-theme.css'?>"/>
 
-
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.5/sweetalert2.all.js"></script>
 	<script language="javascript" src=<?= URL_JS . "jquery-3.1.1.min"?>></script>
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

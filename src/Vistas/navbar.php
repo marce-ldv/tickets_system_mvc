@@ -48,7 +48,7 @@
                             <a class="page-scroll " style="color:white" href="/user/login/">Login</a>
                         </li>
                         <li>
-                            <a class="page-scroll" style="color:white" href="#">Boton</a>
+                            <a class="page-scroll " style="color:white" href="/user/register/">Register</a>
                         </li>
                     </ul>
                 </nav>

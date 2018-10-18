@@ -3,11 +3,11 @@
 	use DAO\Connection as Connection;
 	use Model\User as User;
 
-	class UserDAO extends Connection
+	class UserDAO
 	{
 		private $table = "users"; /* se agregar para el dia de mañana modificar una vez el nombre de la tabla */
 		private $listado = []; //aca van los objetos instanciados desde la base de datos
-		//protected $table = 'users';
+		protected $table = 'users';
 
 		public function addUser(User $user){
 			$query = 'INSERT INTO $this->table (username, pass, name_user, email, role_user)  -- deberia funcionar
@@ -32,18 +32,6 @@
 			$statement->execute();
 
 			return $connection->lastInsertId();
-		}
-
-		/*En el if compruebo si user tiene datos, en caso que los contenga hago una validacion
-		de password, no necesito validar tambien el username ya que es el que viene en la variable user */
-		public function login($username, $password) {
-			$user = $this->userDao->read($user);
-
-			if($user){
-				if($user->getPassword == $password){
-					//logueaste
-				}
-			}
 		}
 				
 	}

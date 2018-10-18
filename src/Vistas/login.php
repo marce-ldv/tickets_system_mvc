@@ -4,11 +4,11 @@
 <div class="container" style="margin-top:30px;">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 text-center">
-			<h2 class="section-heading" style="color:white">REGISTRARSE</h2>
+			<h2 class="section-heading" style="color:white">Login</h2>
 			<hr class="primary">
 			<p>
 				<strong style="color:white">
-					Registrate.
+					Logueate.
 				</strong>
 			</p>
 			<div class="regularform">
@@ -45,7 +45,7 @@
 
 					<input required name="pass" autocomplete="off" type="password" class="col-md-6 norightborder btn1" placeholder="Contraseña">
 
-					<button type="submit" class="contact submit btn btn-primary btn-xl pull-right " style="  border-radius:15px;">Registrarse</button>
+					<button type="submit" class="contact submit btn btn-primary btn-xl pull-right " style="  border-radius:15px;">Login</button>
 
 				</form>
 			</div>
