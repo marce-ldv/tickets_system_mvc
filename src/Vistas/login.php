@@ -36,7 +36,7 @@
 
 					<input required name="pass" autocomplete="off" type="password" class="col-md-6 norightborder" placeholder="contraseña">
 
-					<button type="submit" class="contact submit btn btn-primary btn-xl pull-right " style="  border-radius:15px;">Registrarse</button>
+					<button type="submit" class="contact submit btn btn-primary btn-xl pull-right " style="  border-radius:15px; ">Registrarse</button>
 
 				</form>
 			</div>
