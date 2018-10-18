@@ -5,14 +5,14 @@ namespace model;
 class User{
 
     private $id_user;
-    private $name;
+    private $username;
     private $email;
     private $password;
     private $role;
 
-    public function __construct($name, $email, $password, $role)
+    public function __construct($username, $email, $password, $role)
     {
-        $this->name = $name;
+        $this->username = $username;
         $this->email = $email;
         $this->password = $password;
         $this->role = $role;
@@ -41,9 +41,9 @@ class User{
     /**
      * @return mixed
      */
-    public function getName()
+    public function getUsername()
     {
-        return $this->name;
+        return $this->username;
     }
 
     /**
@@ -51,9 +51,9 @@ class User{
      *
      * @return self
      */
-    public function setName($name)
+    public function setUsername($name)
     {
-        $this->name = $name;
+        $this->username = $username;
 
         return $this;
     }

@@ -5,7 +5,6 @@ CREATE TABLE users(
     id_user BIGINT AUTO_INCREMENT,
     username VARCHAR(50),
     pass VARCHAR(100),
-    name_user VARCHAR(100),
     email VARCHAR(50),
     role_user VARCHAR(50),
     CONSTRAINT pk_id_user PRIMARY KEY (id_user)
