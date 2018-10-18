@@ -39,6 +39,15 @@ CREATE TABLE events(
 	CONSTRAINT fk_id_category FOREIGN KEY (id_category) REFERENCES categories(id_category) ON DELETE CASCADE
 ); 
 
+CREATE TABLE artists(
+	id_artist BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
+	name VARCHAR(50) NOT NULL,
+	surname VARCHAR(50) NOT NULL,
+	nick_name VARCHAR(50) NOT NULL,
+	CONSTRAINT id_artist PRIMARY KEY (id_artist),
+	CONSTRAINT nick_name UNIQUE (nick_name)
+);
+
 CREATE TABLE calendars(
 	id_calendar BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
 	id_event BIGINT NOT NULL,
