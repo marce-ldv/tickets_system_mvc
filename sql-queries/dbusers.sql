@@ -32,23 +32,14 @@ CREATE TABLE customers(
 );
 
 CREATE TABLE categories(
-<<<<<<< HEAD
-	id_category BIGINT AUTO_INCREMENT,
-=======
 	id_category BIGINT UNSIGNED AUTO_INCREMENT,
->>>>>>> 24ffdee5138055c353ef8434c34948f4c56f1b23
 	description VARCHAR(50),
 	CONSTRAINT pk_id_category PRIMARY KEY (id_category)
 );
 
 CREATE TABLE events(
-<<<<<<< HEAD
-	id_event BIGINT AUTO_INCREMENT,
-	id_category BIGINT NOT NULL,
-=======
 	id_event BIGINT UNSIGNED AUTO_INCREMENT,
 	id_category BIGINT UNSIGNED,
->>>>>>> 24ffdee5138055c353ef8434c34948f4c56f1b23
 	title VARCHAR(50) NOT NULL,
 	CONSTRAINT pk_id_event PRIMARY KEY (id_event),
 	CONSTRAINT fk_id_category FOREIGN KEY (id_category) REFERENCES categories(id_category) ON DELETE CASCADE
@@ -63,35 +54,15 @@ CREATE TABLE artists(
 	CONSTRAINT nick_name UNIQUE (nick_name)
 );
 
-<<<<<<< HEAD
-CREATE TABLE calendars(
-	id_calendar BIGINT UNSIGNED AUTO_INCREMENT,
-	id_event BIGINT NOT NULL,
-	date_start DATE NOT NULL,
-	date_end DATE NOT NULL,
-	CONSTRAINT pk_id_calendar PRIMARY KEY (id_calendar),
-	CONSTRAINT fk_id_event FOREIGN KEY (id_event) REFERENCES events(id_event) ON DELETE CASCADE
-);
-=======
->>>>>>> 24ffdee5138055c353ef8434c34948f4c56f1b23
-
 CREATE TABLE place_events(
-<<<<<<< HEAD
-	id_place_event BIGINT AUTO_INCREMENT,
-=======
 	id_place_event BIGINT UNSIGNED AUTO_INCREMENT,
->>>>>>> 24ffdee5138055c353ef8434c34948f4c56f1b23
 	capacity BIGINT NOT NULL,
 	description VARCHAR(50),
 	CONSTRAINT pk_id_place_event PRIMARY KEY (id_place_event)
 );
 
 CREATE TABLE type_areas(
-<<<<<<< HEAD
-	id_type_square BIGINT UNSIGNED AUTO_INCREMENT,
-=======
 	id_type_area BIGINT UNSIGNED AUTO_INCREMENT,
->>>>>>> 24ffdee5138055c353ef8434c34948f4c56f1b23
 	description VARCHAR(50),
 	CONSTRAINT pk_id_type_areas PRIMARY KEY (id_type_area)
 );
@@ -107,18 +78,13 @@ CREATE TABLE calendars(
 
 CREATE TABLE area_events(
 	id_event_area BIGINT UNSIGNED AUTO_INCREMENT,
-<<<<<<< HEAD
-	id_type_area BIGINT,
-	id_calendar BIGINT,
-=======
 	id_type_area BIGINT UNSIGNED,
 	id_calendar BIGINT UNSIGNED,
->>>>>>> 24ffdee5138055c353ef8434c34948f4c56f1b23
 	quantity INT,
 	price INT NOT NULL,
 	remainder INT,
 	CONSTRAINT pk_id_event_area PRIMARY KEY (id_event_area),
-	CONSTRAINT fk_id_type_area FOREIGN KEY (id_type_area) REFERENCES type_areas(id_type_square) ON DELETE CASCADE,
+	CONSTRAINT fk_id_type_area FOREIGN KEY (id_type_area) REFERENCES type_areas(id_type_area) ON DELETE CASCADE,
 	CONSTRAINT fk_id_calendar FOREIGN KEY (id_calendar) REFERENCES calendars(id_calendar) ON DELETE CASCADE
 );
 
