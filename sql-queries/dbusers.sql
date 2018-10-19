@@ -26,13 +26,13 @@ CREATE TABLE customers(
 -------------------------------------
 
 CREATE TABLE categories(
-	id_category BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
+	id_category BIGINT AUTO_INCREMENT,
 	description VARCHAR(50),
 	CONSTRAINT pk_id_category PRIMARY KEY (id_category)
 );
 
 CREATE TABLE events(
-	id_event BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
+	id_event BIGINT AUTO_INCREMENT,
 	id_category BIGINT NOT NULL,
 	title VARCHAR(50) NOT NULL,
 	CONSTRAINT pk_id_event PRIMARY KEY (id_event),
@@ -40,7 +40,7 @@ CREATE TABLE events(
 ); 
 
 CREATE TABLE artists(
-	id_artist BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
+	id_artist BIGINT UNSIGNED AUTO_INCREMENT,
 	name VARCHAR(50) NOT NULL,
 	surname VARCHAR(50) NOT NULL,
 	nick_name VARCHAR(50) NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE artists(
 );
 
 CREATE TABLE calendars(
-	id_calendar BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
+	id_calendar BIGINT UNSIGNED AUTO_INCREMENT,
 	id_event BIGINT NOT NULL,
 	date_start DATE NOT NULL,
 	date_end DATE NOT NULL,
@@ -59,29 +59,29 @@ CREATE TABLE calendars(
 
 --lugar eventos
 CREATE TABLE place_events(
-	id_place_event BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
-	capacity INT NOT NULL UNSIGNED,
+	id_place_event BIGINT AUTO_INCREMENT,
+	capacity BIGINT NOT NULL,
 	description VARCHAR(50),
 	CONSTRAINT pk_id_place_event PRIMARY KEY (id_place_event)
 );
 
 --tipo plazas
 CREATE TABLE type_areas(
-	id_type_square BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
+	id_type_square BIGINT UNSIGNED AUTO_INCREMENT,
 	description VARCHAR(50),
 	CONSTRAINT pk_id_type_square PRIMARY KEY (id_type_square)
 );
 
 --plaza evento
 CREATE TABLE area_events(
-	id_event_area BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
-	id_type_area BIGINT NOT NULL,
-	id_calendar BIGINT NOT NULL,
+	id_event_area BIGINT UNSIGNED AUTO_INCREMENT,
+	id_type_area BIGINT,
+	id_calendar BIGINT,
 	quantity INT,
 	price INT NOT NULL,
 	remainder INT,
 	CONSTRAINT pk_id_event_area PRIMARY KEY (id_event_area),
-	CONSTRAINT fk_id_type_area FOREIGN KEY (id_type_area) REFERENCES type_areas(id_type_area) ON DELETE CASCADE,
+	CONSTRAINT fk_id_type_area FOREIGN KEY (id_type_area) REFERENCES type_areas(id_type_square) ON DELETE CASCADE,
 	CONSTRAINT fk_id_calendar FOREIGN KEY (id_calendar) REFERENCES calendars(id_calendar) ON DELETE CASCADE
 );
 

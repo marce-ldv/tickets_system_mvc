@@ -5,30 +5,30 @@ namespace Config;
 class Router
 {
 
-    public static function direccionar(Request $request)
+    public static function go(Request $request)
     {
-        $controlador = $request->getControlador() . 'Controller';
-        $metodo = $request->getMetodo();
-        $parametros = $request->getParametros();
+        $controller = $request->getController() . 'Controller';
+        $method = $request->getMethod();
+        $parameters = $request->getParameters();
 
         //$ruta = ROOT . 'Controladoras/' . $controlador . '.php';
 
         //require_once $ruta;
-        self::ejecutar(self::instanciar($controlador), $metodo, $parametros);
+        self::executeMethod(self::instaceMethod($controller), $method, $parameters);
     }
 
-    private static function instanciar($controlador)
+    private static function instaceMethod($controller)
     {
-        $mostrar = "Controller\\" . $controlador;
-        return new $mostrar;
+        $show = "Controller\\" . $controller;
+        return new $show;
     }
 
-    private static function ejecutar($controlador, $metodo, $parametros)
+    private static function executeMethod($controller, $method, $parameters)
     {
-        if (!isset($parametros)) {
-            call_user_func(array($controlador, $metodo));
+        if (!isset($parameters)) {
+            call_user_func(array($controller, $method));
         } else {
-            call_user_func_array(array($controlador, $metodo), $parametros);
+            call_user_func_array(array($controller, $method), $parameters);
         }
     }
 }

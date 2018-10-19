@@ -34,7 +34,7 @@
 				$statement->execute();
 
 				return $connection->lastInsertId();
-			}catch(Exception $e){
+			}catch(/PDOException $e){
 				echo $e->getMessage();
 				die();
 			}catch(Exception $e){
@@ -45,24 +45,31 @@
 
 		public function fetchAllUsers(){
 
-	        $query = "SELECT * FROM $this->tabla";
+			try{
+		        $query = "SELECT * FROM $this->tabla";
 
-	        $connection = Connection::connect();
+		        $connection = Connection::connect();
 
-	        $statement = $connection->prepare($query);
+		        $statement = $connection->prepare($query);
 
-	        $statement->execute();
+		        $statement->execute();
 
-	        $dataSet = $statement->fetchAll(\PDO::FETCH_ASSOC);
+		        $dataSet = $statement->fetchAll(\PDO::FETCH_ASSOC);
 
-	        $this->mapMethod($dataSet);
+		        $this->mapMethod($dataSet);
 
-	        if (!empty($this->objInstances)) {
-	            return $this->objInstances;
-	        }
+		        if (!empty($this->objInstances)) {
+		            return $this->objInstances;
+		        }
 
-	        	return null;
-	    	}		
+		        return null;
+		    }catch(/PDOException $e){
+				echo $e->getMessage();
+				die();
+			}catch(Exception $e){
+				echo $e->getMessage();
+				die();
+			}	
 		}//end fetch method
 
 		public function mapMethod($dataSet){
@@ -72,9 +79,9 @@
 	        if($dataSet){
 	            $this->listado = array_map(function ($p) {
 	                $u = new Usuario(
-	                    $p['nikname'],
-	                    $p['email'],
-	                    $p['pwd']);
+	                    $p['username'],
+	                    $p['password'],
+	                    $p['email']);
 	                $u->setId($p['id_usuario']);
 	                return $u;
 	            }, $dataSet);

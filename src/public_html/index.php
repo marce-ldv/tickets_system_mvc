@@ -42,6 +42,6 @@ Config\Autoload::start();
 include URL_VIEW . 'header.php'; //El header es estático para todas las páginas.
 
  
-Config\Router::direccionar(new Config\Request());
+Config\Router::go(new Config\Request());
 
 include URL_VIEW . 'footer.php'; //El footer es estático para todas las páginas.

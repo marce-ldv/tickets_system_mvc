@@ -2,16 +2,16 @@
 
 class Request
 {
-    private $controlador;
-    private $metodo;
-    private $parametros;
+    private $controller;
+    private $method;
+    private $parameters;
 
     /**
      * Request constructor.
      */
     public function __construct()
     {
-        $metodoRequest = $this->getMetodoRequest();
+        $requestMethod = $this->getRequestMethod();
 
         $url = filter_input(INPUT_SERVER, 'REQUEST_URI', FILTER_SANITIZE_URL);
         
@@ -58,21 +58,21 @@ class Request
 
         if (empty($arrayUrl)) {
             // Si Arreglo Url esta vacio, cargo el controlador por defecto y  cargo el index por defecto.
-            $this->controlador = 'user';
-            $this->metodo = 'index';
+            $this->controller = 'user';
+            $this->method = 'index';
         } else {
             // Quito el primer elemento del array y lo uso como controlador y el segundo lo uso como metodo
-            $this->controlador = ucwords(array_shift($arrayUrl));
-            $this->metodo = array_shift($arrayUrl);
+            $this->controller = ucwords(array_shift($arrayUrl));
+            $this->method = array_shift($arrayUrl);
         }
 
-        if ($metodoRequest == 'GET') {
+        if ($requestMethod == 'GET') {
             if (!empty($arrayUrl)) {
-                $this->parametros = $a;
+                $this->parameters = $a;
             }
         } else {
             if (!empty($_POST)) {
-                $this->parametros = $_POST;
+                $this->parameters = $_POST;
             }
         }
     }
@@ -84,7 +84,7 @@ class Request
      *
      * @return String
      */
-    public static function getMetodoRequest()
+    public static function getRequestMethod()
     {
         return $_SERVER['REQUEST_METHOD'];
     }
@@ -96,9 +96,9 @@ class Request
      *
      * @return String
      */
-    public function getControlador()
+    public function getController()
     {
-        return $this->controlador;
+        return $this->controller;
     }
 
     /**
@@ -108,9 +108,9 @@ class Request
      *
      * @return String
      */
-    public function getMetodo()
+    public function getMethod()
     {
-        return $this->metodo;
+        return $this->method;
     }
 
     /**
@@ -120,8 +120,8 @@ class Request
      *
      * @return /Array
      */
-    public function getParametros()
+    public function getParameters()
     {
-        return $this->parametros;
+        return $this->parameters;
     }
 }
