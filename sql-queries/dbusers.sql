@@ -18,8 +18,25 @@ CREATE TABLE users(
     CONSTRAINT uniq_username UNIQUE (username)
 );
 
+CREATE TABLE roles(
+	id_rol BIGINT UNSIGNED AUTO_INCREMENT,
+	priority INT NOT NULL,
+	CONSTRAINT pk_id_rol PRIMARY KEY (id_rol)
+);
+
+CREATE TABLE accounts(
+	id_account BIGINT UNSIGNED AUTO_INCREMENT,
+	id_rol BIGINT UNSIGNED,
+	nick_name VARCHAR(50) NOT NULL,
+	password VARCHAR(50) NOT NULL,
+	email VARCHAR(50) NOT NULL,
+	CONSTRAINT pk_id_account PRIMARY KEY (id_account),
+	CONSTRAINT fk_id_rol FOREIGN KEY (id_rol) REFERENCES roles(id_rol)
+);
+
 CREATE TABLE customers(
 	id_customer BIGINT UNSIGNED AUTO_INCREMENT,
+	id_account BIGINT UNSIGNED,
 	name VARCHAR(50) NOT NULL,
 	surname VARCHAR(50) NOT NULL,
 	dni VARCHAR(50),
@@ -27,6 +44,7 @@ CREATE TABLE customers(
 	id_twitter INT,
 	id_google INT,
 	CONSTRAINT pk_id_customer PRIMARY KEY (id_customer),
+	CONSTRAINT fk_id_account FOREIGN KEY (id_account) REFERENCES accounts(id_account) ON DELETE CASCADE,
 	CONSTRAINT unq_dni UNIQUE (dni),
 	CONSTRAINT unq_fb UNIQUE (id_fb)
 );
@@ -123,24 +141,3 @@ CREATE TABLE tickets(
 	CONSTRAINT pk_id_ticket PRIMARY KEY (id_ticket),
 	CONSTRAINT uniq_code_qr UNIQUE (code_qr) 
 );
-
-
-CREATE TABLE accounts(
-	id_account BIGINT UNSIGNED AUTO_INCREMENT,
-	nick_name VARCHAR(50) NOT NULL,
-	password VARCHAR(50) NOT NULL,
-	email VARCHAR(50) NOT NULL,
-	id_rol BIGINT UNSIGNED,
-	CONSTRAINT pk_id_account PRIMARY KEY (id_account)
-);
-
-CREATE TABLE rols(
-	id_rol BIGINT UNSIGNED AUTO_INCREMENT,
-	priority INT NOT NULL,
-	CONSTRAINT pk_id_rol PRIMARY KEY (id_rol)
-);
-
-
-
-
-
