@@ -5,36 +5,46 @@
 
 	class UserDAO
 	{
-		private $table = "users"; /* se agregar para el dia de mañana modificar una vez el nombre de la tabla */
+		protected $table = "users"; /* se agregar para el dia de mañana modificar una vez el nombre de la tabla */
 		private $objInstances = []; //aca van los objetos instanciados desde la base de datos
-		protected $table = 'users';
+		private static $instance;
+
+		public function __construct(){
+			
+		}
+
+		public static function getInstance()
+    	{
+			if (!self::$instance instanceof self) {
+				self::$instance = new self();
+			}
+			return self::$instance;
+    	}
 
 		public function addUser(User $user){
 
 			try{
-				$query = 'INSERT INTO $this->table (username, pass, name_user, email, role_user)  -- deberia funcionar
-				VALUES (:username, :pass, :name_user, :email, :role_user)';
+				$sql = ("INSERT INTO $this->table (username, pass, email, role_user)
+				VALUES (:username, :pass, :email, :role_user)");
 
 				$pdo = new Connection();
 				$connection = $pdo->connect(); //devuelve un obj PDO
-				$statement = $connection->prepare($query);
+				$statement = $connection->prepare($sql);
 
 				$username = $user->getUsername();
 				$password = $user->getPassword();
-				$name = $user->getName();
 				$email = $user->getEmail();
 				$role = $user->getRole();
 				
 				$statement->bindParam(':username', $username);
 				$statement->bindParam(':password', $password);
-				$statement->bindParam(':name', $name);
 				$statement->bindParam(':email', $email);
 				$statement->bindParam(':role', $role);
 				
 				$statement->execute();
 
 				return $connection->lastInsertId();
-			}catch(/PDOException $e){
+			}catch(\PDOException $e){
 				echo $e->getMessage();
 				die();
 			}catch(Exception $e){
@@ -63,7 +73,7 @@
 		        }
 
 		        return null;
-		    }catch(/PDOException $e){
+		    }catch(\PDOException $e){
 				echo $e->getMessage();
 				die();
 			}catch(Exception $e){

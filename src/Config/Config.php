@@ -3,9 +3,9 @@
 namespace Config;
 
 
-define("DB_NAME", "");
+define("DB_NAME", "dbusers");
 define("DB_USER", "root");
-define("DB_PASS", "");
+define("DB_PASS", "mardelplata");
 define("DB_HOST", "localhost");
 
 // Constantes front

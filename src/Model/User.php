@@ -11,21 +11,11 @@ class User{
     private $id_role;
     private $id_facebook;
 
-
-    /**
-     * Class Constructor
-     * @param    $id_user   
-     * @param    $nickname   
-     * @param    $email   
-     * @param    $password   
-     * @param    $id_role   
-     */
-    public function __construct($nickname, $email, $password, $id_role)
-    {
+    public function __construct($nickname, $pass, $email){
         $this->nickname = $nickname;
-        $this->email = $email;
         $this->password = $password;
-        $this->id_role = $id_role;
+        $this->email = $email;
+        
     }
 
 
