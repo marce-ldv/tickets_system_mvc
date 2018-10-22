@@ -98,7 +98,7 @@
            <div class="team-social">
             <a href="<?= '/ubicacion/googlemaps/' . $objeto='1'; ?>" class="fa fa-map-marker" aria-hidden="true" title="Ubicacion"></a>
             <a href="#" title="twitter"><i class="fa fa-twitter"></i></a>
-            <a href="#" title="facebook"><i class="fa fa-facebook"></i></a> 
+            <a href="#" title="facebook"><i class="fa fa-facebook"></i></a>
             <a href="#" title="skype"><i class="fa fa-skype"></i></a>
             <a href="#" title="linkedin"><i class="fa fa-linkedin"></i></a>
         </div>
@@ -113,7 +113,7 @@
         <div class="team-social">
             <a href="<?= '/ubicacion/googlemaps/' . $objeto='2'; ?>" class="fa fa-map-marker" aria-hidden="true" title="Ubicacion"></a>
             <a href="#" title="twitter"><i class="fa fa-twitter"></i></a>
-            <a href="#" title="facebook"><i class="fa fa-facebook"></i></a> 
+            <a href="#" title="facebook"><i class="fa fa-facebook"></i></a>
             <a href="#" title="skype"><i class="fa fa-skype"></i></a>
             <a href="#" title="linkedin"><i class="fa fa-linkedin"></i></a>
         </div>
@@ -127,7 +127,7 @@
         <div class="team-social">
             <a href="<?= '/ubicacion/googlemaps/' . $objeto='3'; ?>" class="fa fa-map-marker" aria-hidden="true" title="Ubicacion"></a>
             <a href="#" title="twitter"><i class="fa fa-twitter"></i></a>
-            <a href="#" title="facebook"><i class="fa fa-facebook"></i></a> 
+            <a href="#" title="facebook"><i class="fa fa-facebook"></i></a>
             <a href="#" title="skype"><i class="fa fa-skype"></i></a>
             <a href="#" title="linkedin"><i class="fa fa-linkedin"></i></a>
         </div>
@@ -160,11 +160,6 @@
     </section>
 
     <script type="text/javascript">
-    $(".alert").delay(200).addClass("in").fadeOut(3500);
-    
-    </script>
+    //$(".alert").delay(200).addClass("in").fadeOut(3500);
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
+    </script>
