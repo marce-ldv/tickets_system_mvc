@@ -23,16 +23,12 @@ class UserController{
     public function register($nickname,$pass,$email){
 
           try{
-
 			$regComplete = FALSE;
 			$user_dao = $this->userDao;
-
 			//if(!$user_dao->verificarEmail($email))
 			//{
-
 				//if(!$user_dao->verificarNickname($nickname))
 				//{
-
 					$user = new User($nickname,$pass,$email);
 					$id_usuario = $user_dao->addUser($user);
 					$user->setIdUser($id_usuario);
