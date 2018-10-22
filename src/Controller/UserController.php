@@ -4,7 +4,7 @@ namespace Controller;
 use Dao\UserDAO as UserDao;
 use Model\User as User;
 
-
+// TODO: HAY QUE MODIFICAR LA LLAMADA A LAS VISTAS, DEBE LLAMAR AL METODO DE LA CONTROLADORA Y NO USAR REQUIRED NI INCLUDE
 class UserController{
 
     protected $userDao;
@@ -20,7 +20,6 @@ class UserController{
     public function login(){
         require(URL_VIEW . "login.php");
     }
-
     public function register ($nickname,$pass,$email) {
 
       try {

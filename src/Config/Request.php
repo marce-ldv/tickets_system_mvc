@@ -14,7 +14,7 @@ class Request
         $requestMethod = $this->getRequestMethod();
 
         $url = filter_input(INPUT_SERVER, 'REQUEST_URI', FILTER_SANITIZE_URL);
-        
+
 
         /**
          * Apache:
@@ -36,7 +36,7 @@ class Request
 
         $urlToArray = explode("/", $url);
 
-  
+
         /**
          * Devuelve un array de string, siendo cada uno un substring del segundo parametro pasado formado
          * por la división realizada por los delimitadores indicados en el primer paramtro.
@@ -68,7 +68,7 @@ class Request
 
         if ($requestMethod == 'GET') {
             if (!empty($arrayUrl)) {
-                $this->parameters = $a;
+                $this->parameters = $arrayUrl;
             }
         } else {
             if (!empty($_POST)) {

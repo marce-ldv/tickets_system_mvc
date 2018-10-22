@@ -160,6 +160,5 @@
     </section>
 
     <script type="text/javascript">
-    //$(".alert").delay(200).addClass("in").fadeOut(3500);
-
+      $(".alert").delay(200).addClass("in").fadeOut(3500);
     </script>
