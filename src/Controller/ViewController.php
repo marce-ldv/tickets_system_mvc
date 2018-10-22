@@ -16,14 +16,26 @@ class ViewController
     }
 
     public function index(){
-    	require(URL_VIEW . "home.php");
+      include URL_VIEW . 'header.php';
+      require(URL_VIEW . "home.php");
+      include URL_VIEW . 'footer.php';
     }
 
     public function register(){
-    	require(URL_VIEW . "register.php");
+      include URL_VIEW . 'header.php';
+      require(URL_VIEW . "register.php");
+      include URL_VIEW . 'footer.php';
     }
 
     public function login(){
-    	require(URL_VIEW . "login.php");
+      include URL_VIEW . 'header.php';
+      require(URL_VIEW . "login.php");
+      include URL_VIEW . 'footer.php';
+    }
+
+    public function dashboard(){
+      include URL_VIEW . 'header.php';
+      require(URL_VIEW . "dashboard.php");
+      include URL_VIEW . 'footer.php';
     }
 }
