@@ -12,11 +12,11 @@ class ViewController
      * summary
      */
     public function __construct(){
-        
+
     }
 
     public function index(){
-    	require(URL_VIEW . "dashboard.php");
+    	require(URL_VIEW . "home.php");
     }
 
     public function register(){

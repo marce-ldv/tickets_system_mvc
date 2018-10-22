@@ -18,7 +18,7 @@ class UserController{
     }
 
     public function login(){
-        require(URL_VIEW . "login.php"); 
+        require(URL_VIEW . "login.php");
     }
 
     public function register($nickname,$pass,$email){
@@ -26,9 +26,9 @@ class UserController{
           try{
 			$regComplete = FALSE;
 			$user_dao = $this->userDao;
-			//if(!$user_dao->verificarEmail($email))
+			//if(!$user_dao->verifyEmail($email))
 			//{
-				//if(!$user_dao->verificarNickname($nickname))
+				//if(!$user_dao->verifyNickname($nickname))
 				//{
 					$user = new User($nickname,$pass,$email);
 					$id_usuario = $user_dao->addUser($user);
@@ -37,7 +37,7 @@ class UserController{
 				//}
 			//}
 			switch ($regComplete) {
-                
+
 				case TRUE:
 				require(URL_VIEW . 'home.php');
 				break;
@@ -56,6 +56,6 @@ class UserController{
 
     }
 
-    
+
 
 }

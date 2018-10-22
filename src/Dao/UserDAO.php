@@ -10,7 +10,7 @@
 		private static $instance;
 
 		public function __construct(){
-			
+
 		}
 
 		public static function getInstance()
@@ -31,16 +31,16 @@
 				$connection = $pdo->connect(); //devuelve un obj PDO
 				$statement = $connection->prepare($sql);
 
-				$username = $user->getUsername();
+				$username = $user->getNickname();
 				$pass = $user->getPassword();
 				$email = $user->getEmail();
-				$role = $user->getRole();
-				
+				$role = "user";
+
 				$statement->bindParam(':username', $username);
 				$statement->bindParam(':pass', $pass);
 				$statement->bindParam(':email', $email);
-				$statement->bindParam(':role', $role);
-				
+				$statement->bindParam(':role_user', $role);
+
 				$statement->execute();
 
 				return $connection->lastInsertId();
@@ -79,7 +79,7 @@
 			}catch(Exception $e){
 				echo $e->getMessage();
 				die();
-			}	
+			}
 		}//end fetch method
 
 		public function mapMethod($dataSet){
