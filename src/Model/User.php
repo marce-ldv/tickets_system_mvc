@@ -1,9 +1,11 @@
-<?php 
+<?php
 
 namespace Model;
 
 class User{
 
+    // TODO: DEBE QUEDAR IGUAL EL MODELO A LA DE LA BASE DE DATOS, ES DECIR EL NOMBRE DE LOS ATRIBUTOS
+    
     private $id_user;
     private $nickname;
     private $email;
@@ -15,7 +17,7 @@ class User{
         $this->nickname = $nickname;
         $this->password = $password;
         $this->email = $email;
-        
+
     }
 
     /**
@@ -118,4 +120,3 @@ class User{
         return $this;
     }
 }
-

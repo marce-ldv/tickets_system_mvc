@@ -9,7 +9,7 @@ class UserController{
 
     protected $userDao;
 
-    function __construct(){
+    function __construct() {
         $this->userDao = UserDao::getInstance();
     }
 
@@ -21,38 +21,38 @@ class UserController{
         require(URL_VIEW . "login.php");
     }
 
-    public function register($nickname,$pass,$email){
+    public function register ($nickname,$pass,$email) {
 
-          try{
-			$regComplete = FALSE;
-			$user_dao = $this->userDao;
-			//if(!$user_dao->verifyEmail($email))
-			//{
-				//if(!$user_dao->verifyNickname($nickname))
-				//{
-					$user = new User($nickname,$pass,$email);
-					$id_usuario = $user_dao->addUser($user);
-					$user->setIdUser($id_usuario);
-					$regComplete = TRUE;
-				//}
-			//}
-			switch ($regComplete) {
+      try {
+    			$regComplete = FALSE;
 
-				case TRUE:
-				require(URL_VIEW . 'home.php');
-				break;
+    			$user_dao = $this->userDao;
 
-				case FALSE:
-				require(URL_VIEW . "register.php");
-				break;
-			}
+    			if ( ! $user_dao->verifyEmail($email)) {
+    				if ( ! $user_dao->verifyNickname($nickname)) {
+    					$user = new User($nickname,$pass,$email);
+    					$id_usuario = $user_dao->addUser($user);
+    					$user->setIdUser($id_usuario);
+    					$regComplete = TRUE;
+    				}
+    			}
+    			switch ($regComplete) {
 
-		}catch(\PDOException $pdo_error){
-			require(URL_VISTA . "registrarse.php");
-		}catch(\Exception $error){
-            echo $error->getMessage();
-            die();
-		}
+    				case TRUE:
+    				require(URL_VIEW . 'home.php');
+    				break;
+
+    				case FALSE:
+    				require(URL_VIEW . "register.php");
+    				break;
+    			}
+
+    		} catch(\PDOException $pdo_error) {
+    			require(URL_VISTA . "registrarse.php");
+    		} catch(\Exception $error) {
+                echo $error->getMessage();
+                die();
+    		}
 
     }
 
