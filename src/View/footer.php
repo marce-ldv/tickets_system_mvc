@@ -14,7 +14,7 @@
 	</section>
 
 	<!-- JS -->
-	<script language="javascript" src=<?= URL_JS . "jquery-3.1.1.min.js"?>></script>
+	<script language="javascript" src="<?= URL_JS . "jquery-3.1.1.min.js"?>"></script>
 
 </body>
 </html>

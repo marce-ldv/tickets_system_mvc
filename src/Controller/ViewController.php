@@ -16,7 +16,7 @@ class ViewController
     }
 
     public function index(){
-    	require(URL_VIEW . "home.php");
+    	require(URL_VIEW . "dashboard.php");
     }
 
     public function register(){
