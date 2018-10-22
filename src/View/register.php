@@ -18,12 +18,12 @@
 						Thank you!
 					</div>
 				</div>
-				<form id="form_r" method="post" action="/user/register" id="contactform" class="text-left "autocomplete="off" enctype= 'multipart/form-data'>
+				<form id="form_r" method="post" action="/user/register/" id="contactform" class="text-left "autocomplete="off" enctype= 'multipart/form-data'>
 
 
-					<input required name="username" type="given-name" class="col-md-12 norightborder btn1" placeholder="Nombre de usuario">
+					<input required name="username" type="text" class="col-md-12 norightborder btn1" placeholder="Nombre de usuario">
 
-					<input required name="pass" type="family-name" class="col-md-12 norightborder btn1" placeholder="Contraseña">
+					<input required name="pass" type="password" class="col-md-12 norightborder btn1" placeholder="Contraseña">
 					
 					<input required name="email" type="email"  class="col-md-12 norightborder btn1" placeholder="E-mail">
 

@@ -1,7 +1,7 @@
 <?php
 
 namespace Controller;
-use DAO\UserDAO as UserDao;
+use Dao\UserDAO as UserDao;
 
 /**
  * summary

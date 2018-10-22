@@ -1,7 +1,7 @@
 <?php 
-namespace dao;
+namespace Dao;
 
-use DAO\Connection as Connection;
+use Dao\Connection as Connection;
 //use Model\
 
 class CustomerDAO{

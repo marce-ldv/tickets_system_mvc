@@ -1,6 +1,6 @@
 <?php 
 
-namespace model;
+namespace Model;
 
 class User{
 
@@ -11,15 +11,12 @@ class User{
     private $id_role;
     private $id_facebook;
 
-    public function __construct($nickname, $pass, $email){
+    public function __construct($nickname, $password, $email){
         $this->nickname = $nickname;
         $this->password = $password;
         $this->email = $email;
         
     }
-
-
-
 
     /**
      * @return mixed

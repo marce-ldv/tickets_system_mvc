@@ -1,6 +1,6 @@
 <?php namespace dao;
 
-	use DAO\Connection as Connection;
+	use Dao\Connection as Connection;
 	use Model\User as User;
 
 	class UserDAO
@@ -32,12 +32,12 @@
 				$statement = $connection->prepare($sql);
 
 				$username = $user->getUsername();
-				$password = $user->getPassword();
+				$pass = $user->getPassword();
 				$email = $user->getEmail();
 				$role = $user->getRole();
 				
 				$statement->bindParam(':username', $username);
-				$statement->bindParam(':password', $password);
+				$statement->bindParam(':pass', $pass);
 				$statement->bindParam(':email', $email);
 				$statement->bindParam(':role', $role);
 				
@@ -90,7 +90,7 @@
 	            $this->listado = array_map(function ($p) {
 	                $u = new Usuario(
 	                    $p['username'],
-	                    $p['password'],
+	                    $p['pass'],
 	                    $p['email']);
 	                $u->setId($p['id_usuario']);
 	                return $u;
