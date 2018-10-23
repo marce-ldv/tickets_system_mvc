@@ -45,10 +45,10 @@
                             <a class="page-scroll" style="color:white" href="/">Inicio</a>
                         </li>
                         <li>
-                            <a class="page-scroll " style="color:white" href="/user/login/">Login</a>
+                            <a class="page-scroll " style="color:white" href="/view/login/">Login</a>
                         </li>
                         <li>
-                            <a class="page-scroll " style="color:white" href="/user/register/">Register</a>
+                            <a class="page-scroll " style="color:white" href="/view/register/">Register</a>
                         </li>
                     </ul>
                 </nav>

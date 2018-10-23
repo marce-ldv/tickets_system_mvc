@@ -1,9 +1,11 @@
-<?php 
+<?php
 
-namespace model;
+namespace Model;
 
 class User{
 
+    // TODO: DEBE QUEDAR IGUAL EL MODELO A LA DE LA BASE DE DATOS, ES DECIR EL NOMBRE DE LOS ATRIBUTOS
+    
     private $id_user;
     private $nickname;
     private $email;
@@ -11,25 +13,12 @@ class User{
     private $id_role;
     private $id_facebook;
 
-
-    /**
-     * Class Constructor
-     * @param    $id_user   
-     * @param    $nickname   
-     * @param    $email   
-     * @param    $password   
-     * @param    $id_role   
-     */
-    public function __construct($nickname, $email, $password, $id_role)
-    {
+    public function __construct($nickname, $password, $email){
         $this->nickname = $nickname;
-        $this->email = $email;
         $this->password = $password;
-        $this->id_role = $id_role;
+        $this->email = $email;
+
     }
-
-
-
 
     /**
      * @return mixed
@@ -131,4 +120,3 @@ class User{
         return $this;
     }
 }
-
