@@ -7,46 +7,37 @@ accounts (cuenta), rols(roles)  ya esta*/
 CREATE DATABASE dbusers;
 USE dbusers;
 
-
-CREATE TABLE users(
-    id_user BIGINT UNSIGNED AUTO_INCREMENT,
-    username VARCHAR(50),
-    pass VARCHAR(100),
-    email VARCHAR(50),
-    role_user VARCHAR(50),
-    CONSTRAINT pk_id_user PRIMARY KEY (id_user),
-    CONSTRAINT uniq_username UNIQUE (username)
-);
-
 CREATE TABLE roles(
 	id_rol BIGINT UNSIGNED AUTO_INCREMENT,
-	priority INT NOT NULL,
+	type_rol VARCHAR(50) NOT NULL,
 	CONSTRAINT pk_id_rol PRIMARY KEY (id_rol)
 );
 
-CREATE TABLE accounts(
-	id_account BIGINT UNSIGNED AUTO_INCREMENT,
-	id_rol BIGINT UNSIGNED,
-	nick_name VARCHAR(50) NOT NULL,
-	password VARCHAR(50) NOT NULL,
-	email VARCHAR(50) NOT NULL,
-	CONSTRAINT pk_id_account PRIMARY KEY (id_account),
-	CONSTRAINT fk_id_rol FOREIGN KEY (id_rol) REFERENCES roles(id_rol)
+CREATE TABLE users(
+    id_user BIGINT UNSIGNED AUTO_INCREMENT,
+    id_rol BIGINT UNSIGNED,
+    username VARCHAR(50),
+    pass VARCHAR(100) NOT NULL,
+    email VARCHAR(50),
+    role_user VARCHAR(50),
+    id_facebook BIGINT,
+	id_twitter BIGINT,
+	id_google BIGINT,
+    CONSTRAINT pk_id_user PRIMARY KEY (id_user),
+    CONSTRAINT uniq_username UNIQUE (username),
+    CONSTRAINT uniq_email UNIQUE (email),
+    CONSTRAINT fk_id_rol FOREIGN KEY (id_rol) REFERENCES roles(id_rol)
 );
 
 CREATE TABLE customers(
 	id_customer BIGINT UNSIGNED AUTO_INCREMENT,
-	id_account BIGINT UNSIGNED,
+	id_user BIGINT UNSIGNED,
 	name VARCHAR(50) NOT NULL,
 	surname VARCHAR(50) NOT NULL,
 	dni VARCHAR(50),
-	id_fb INT,
-	id_twitter INT,
-	id_google INT,
 	CONSTRAINT pk_id_customer PRIMARY KEY (id_customer),
-	CONSTRAINT fk_id_account FOREIGN KEY (id_account) REFERENCES accounts(id_account) ON DELETE CASCADE,
-	CONSTRAINT unq_dni UNIQUE (dni),
-	CONSTRAINT unq_fb UNIQUE (id_fb)
+	CONSTRAINT fk_id_user FOREIGN KEY (id_user) REFERENCES users(id_user) ON DELETE CASCADE,
+	CONSTRAINT unq_dni UNIQUE (dni)
 );
 
 CREATE TABLE categories(
@@ -118,10 +109,10 @@ CREATE TABLE calendars_x_artists(
 
 CREATE TABLE purchases(
 	id_purchase BIGINT UNSIGNED AUTO_INCREMENT,
-	id_customer BIGINT UNSIGNED,
+	id_user BIGINT UNSIGNED,
 	date_purchase DATE,
 	CONSTRAINT pk_id_purchase PRIMARY KEY (id_purchase),
-	CONSTRAINT fk_id_customer FOREIGN KEY (id_customer) REFERENCES customers (id_customer) ON DELETE CASCADE
+	CONSTRAINT fk_id_customer FOREIGN KEY (id_user) REFERENCES users(id_user) ON DELETE CASCADE
 );
 
 CREATE TABLE lines_purchases(
@@ -141,3 +132,4 @@ CREATE TABLE tickets(
 	CONSTRAINT pk_id_ticket PRIMARY KEY (id_ticket),
 	CONSTRAINT uniq_code_qr UNIQUE (code_qr) 
 );
+
