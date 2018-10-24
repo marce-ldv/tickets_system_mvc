@@ -16,16 +16,15 @@ CREATE TABLE roles(
 CREATE TABLE users(
     id_user BIGINT UNSIGNED AUTO_INCREMENT,
     id_rol BIGINT UNSIGNED,
-    username VARCHAR(50),
-    pass VARCHAR(100) NOT NULL,
-    email VARCHAR(50),
-    role_user VARCHAR(50),
+    username VARCHAR(50) NOT NULL,
+    PASSWORD VARCHAR(30) NOT NULL,
+    email VARCHAR(50) NOT NULL,
     id_facebook BIGINT,
-	id_twitter BIGINT,
-	id_google BIGINT,
+		id_twitter BIGINT,
+		id_google BIGINT,
     CONSTRAINT pk_id_user PRIMARY KEY (id_user),
     CONSTRAINT uniq_username UNIQUE (username),
-    CONSTRAINT uniq_email UNIQUE (email),
+    CONSTRAINT uniq_email UNIQUE (email,username),
     CONSTRAINT fk_id_rol FOREIGN KEY (id_rol) REFERENCES roles(id_rol)
 );
 
@@ -34,7 +33,7 @@ CREATE TABLE customers(
 	id_user BIGINT UNSIGNED,
 	name VARCHAR(50) NOT NULL,
 	surname VARCHAR(50) NOT NULL,
-	dni VARCHAR(50),
+	dni VARCHAR(50) NOT NULL,
 	CONSTRAINT pk_id_customer PRIMARY KEY (id_customer),
 	CONSTRAINT fk_id_user FOREIGN KEY (id_user) REFERENCES users(id_user) ON DELETE CASCADE,
 	CONSTRAINT unq_dni UNIQUE (dni)
@@ -57,8 +56,6 @@ CREATE TABLE events(
 CREATE TABLE artists(
 	id_artist BIGINT UNSIGNED AUTO_INCREMENT,
 	name VARCHAR(50) NOT NULL,
-	surname VARCHAR(50) NOT NULL,
-	nick_name VARCHAR(50) NOT NULL,
 	CONSTRAINT id_artist PRIMARY KEY (id_artist),
 	CONSTRAINT nick_name UNIQUE (nick_name)
 );
@@ -91,9 +88,9 @@ CREATE TABLE area_events(
 	id_event_area BIGINT UNSIGNED AUTO_INCREMENT,
 	id_type_area BIGINT UNSIGNED,
 	id_calendar BIGINT UNSIGNED,
-	quantity INT,
-	price INT NOT NULL,
-	remainder INT,
+	quantity_avaliable INT UNSIGNED NOT NULL,
+	price FLOAT UNSIGNED NOT NULL,
+	remainder INT UNSIGNED NOT NULL,
 	CONSTRAINT pk_id_event_area PRIMARY KEY (id_event_area),
 	CONSTRAINT fk_id_type_area FOREIGN KEY (id_type_area) REFERENCES type_areas(id_type_area) ON DELETE CASCADE,
 	CONSTRAINT fk_id_calendar FOREIGN KEY (id_calendar) REFERENCES calendars(id_calendar) ON DELETE CASCADE
@@ -112,7 +109,7 @@ CREATE TABLE calendars_x_artists(
 CREATE TABLE purchases(
 	id_purchase BIGINT UNSIGNED AUTO_INCREMENT,
 	id_user BIGINT UNSIGNED,
-	date_purchase DATE,
+	date_purchase DATE NOT NULL,
 	CONSTRAINT pk_id_purchase PRIMARY KEY (id_purchase),
 	CONSTRAINT fk_id_customer FOREIGN KEY (id_user) REFERENCES users(id_user) ON DELETE CASCADE
 );
