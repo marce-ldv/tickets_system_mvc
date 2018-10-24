@@ -16,16 +16,15 @@ CREATE TABLE roles(
 CREATE TABLE users(
     id_user BIGINT UNSIGNED AUTO_INCREMENT,
     id_rol BIGINT UNSIGNED,
-    username VARCHAR(50),
-    pass VARCHAR(100) NOT NULL,
-    email VARCHAR(50),
-    role_user VARCHAR(50),
+    username VARCHAR(50) NOT NULL,
+    PASSWORD VARCHAR(30) NOT NULL,
+    email VARCHAR(50) NOT NULL,
     id_facebook BIGINT,
 	id_twitter BIGINT,
 	id_google BIGINT,
     CONSTRAINT pk_id_user PRIMARY KEY (id_user),
     CONSTRAINT uniq_username UNIQUE (username),
-    CONSTRAINT uniq_email UNIQUE (email),
+    CONSTRAINT uniq_email UNIQUE (email,username),
     CONSTRAINT fk_id_rol FOREIGN KEY (id_rol) REFERENCES roles(id_rol)
 );
 
@@ -34,7 +33,7 @@ CREATE TABLE customers(
 	id_user BIGINT UNSIGNED,
 	name VARCHAR(50) NOT NULL,
 	surname VARCHAR(50) NOT NULL,
-	dni VARCHAR(50),
+	dni VARCHAR(50) NOT NULL,
 	CONSTRAINT pk_id_customer PRIMARY KEY (id_customer),
 	CONSTRAINT fk_id_user FOREIGN KEY (id_user) REFERENCES users(id_user) ON DELETE CASCADE,
 	CONSTRAINT unq_dni UNIQUE (dni)
@@ -80,8 +79,8 @@ CREATE TABLE calendars(
 	id_calendar BIGINT UNSIGNED AUTO_INCREMENT,
 	id_event BIGINT UNSIGNED,
 	id_place_event BIGINT UNSIGNED, 
-	date_start DATE NOT NULL,
-	date_end DATE NOT NULL,
+	date_start DATETIME NOT NULL,
+	date_end DATETIME NOT NULL,
 	CONSTRAINT pk_id_calendar PRIMARY KEY (id_calendar),
 	CONSTRAINT fk_id_event FOREIGN KEY (id_event) REFERENCES events(id_event) ON DELETE CASCADE,
 	CONSTRAINT fk_id_place_event FOREIGN KEY (id_place_event) REFERENCES place_events(id_place_event) ON DELETE CASCADE
@@ -91,9 +90,9 @@ CREATE TABLE area_events(
 	id_event_area BIGINT UNSIGNED AUTO_INCREMENT,
 	id_type_area BIGINT UNSIGNED,
 	id_calendar BIGINT UNSIGNED,
-	quantity INT,
-	price INT NOT NULL,
-	remainder INT,
+	quantity_avaliable INT UNSIGNED NOT NULL,
+	price FLOAT UNSIGNED NOT NULL,
+	remainder INT UNSIGNED NOT NULL,
 	CONSTRAINT pk_id_event_area PRIMARY KEY (id_event_area),
 	CONSTRAINT fk_id_type_area FOREIGN KEY (id_type_area) REFERENCES type_areas(id_type_area) ON DELETE CASCADE,
 	CONSTRAINT fk_id_calendar FOREIGN KEY (id_calendar) REFERENCES calendars(id_calendar) ON DELETE CASCADE
@@ -112,7 +111,7 @@ CREATE TABLE calendars_x_artists(
 CREATE TABLE purchases(
 	id_purchase BIGINT UNSIGNED AUTO_INCREMENT,
 	id_user BIGINT UNSIGNED,
-	date_purchase DATE,
+	date_purchase DATE NOT NULL,
 	CONSTRAINT pk_id_purchase PRIMARY KEY (id_purchase),
 	CONSTRAINT fk_id_customer FOREIGN KEY (id_user) REFERENCES users(id_user) ON DELETE CASCADE
 );
@@ -121,8 +120,8 @@ CREATE TABLE lines_purchases(
 	id_line_purchase BIGINT UNSIGNED AUTO_INCREMENT,
 	id_purchase BIGINT UNSIGNED,
 	id_event_area BIGINT UNSIGNED,		
-	quantity INT,
-	price INT,
+	quantity INT NOT NULL,
+	price INT NOT NULL,
 	CONSTRAINT pk_id_line_purchase PRIMARY KEY (id_line_purchase),
 	CONSTRAINT fk_id_purchase FOREIGN KEY (id_purchase) REFERENCES purchases (id_purchase) ON DELETE CASCADE,
 	CONSTRAINT fk_id_area_event FOREIGN KEY (id_event_area) REFERENCES area_events(id_event_area) ON DELETE CASCADE
@@ -131,10 +130,9 @@ CREATE TABLE lines_purchases(
 CREATE TABLE tickets(
 	id_ticket BIGINT UNSIGNED AUTO_INCREMENT,
 	id_line_purchase BIGINT UNSIGNED, 
-	number_n INT,
+	number_ticket INT NOT NULL,
 	code_qr VARCHAR(50) NOT NULL,
 	CONSTRAINT pk_id_ticket PRIMARY KEY (id_ticket),
 	CONSTRAINT uniq_code_qr UNIQUE (code_qr),
 	CONSTRAINT fk_id_line_purchase FOREIGN KEY (id_line_purchase) REFERENCES lines_purchases (id_line_purchase) ON DELETE CASCADE 
 );
-
