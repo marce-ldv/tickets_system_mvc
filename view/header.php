@@ -8,7 +8,7 @@
 	<!-- Bootstrap Core CSS -->
 	<link rel="stylesheet" href="<?= URL_CSS .'bootstrap.min.css' ?>" type="text/css">
 	<!-- Plugin CSS -->
-	<link rel="stylesheet" href="<?= URL_CSS . 'animate.min.css'?>" type="text/css">
+	<link rel="stylesheet" href="<?= URL_CSS . 'animate.min.csss'?>" type="text/css">
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="<?= URL_CSS . 'style.css'?>" type="text/css">
     <link rel="stylesheet" href="<?= URL_CSS .'scrolling-nav.css' ?>" type="text/css">
@@ -22,6 +22,6 @@
 	<link rel="stylesheet" href="<?= URL_FONTAWESOME . '/css/' . 'fontawesome-all.min.css'?>" type="text/css"> <!-- https://fontawesome.com/ -->
 	<!--<link rel="stylesheet" type="text/css"href="<?= URL_SLICK . 'slick.css'?>">  -->                     <!-- http://kenwheeler.github.io/slick/ -->
 	<link rel="stylesheet" type="text/css" href="<?=  URL_SLICK .'slick-theme.css'?>"/>
-		
+
 </head>
 <body id="page-top" style="background-image: url(<?= URL_IMG . 'Background.jpg' ?>);">
