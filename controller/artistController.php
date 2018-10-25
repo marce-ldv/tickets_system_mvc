@@ -1,6 +1,6 @@
 <?php
 
-namespace Controller;
+namespace controller;
 
 use Model\Artist;
 
@@ -15,7 +15,7 @@ class ArtistController{
 
     public function save($name)
     {
-    	$nuevoArtist = new Artist($name); 
+    	$nuevoArtist = new Artist($name);
 
 
     }

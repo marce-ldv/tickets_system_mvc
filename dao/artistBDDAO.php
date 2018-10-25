@@ -1,6 +1,6 @@
 <?php
 
-namespace Dao;
+namespace dao;
 
 /**
  * summary

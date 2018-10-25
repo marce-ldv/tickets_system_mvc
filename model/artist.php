@@ -1,5 +1,5 @@
 <?php
-namespace Model;
+namespace model;
 
 class Artist
 {
@@ -12,7 +12,7 @@ class Artist
     {
     	$this->id_artist = $idArtistRecib;
     	$this->name = $nameRecib;
-    	$this->surname = $surnameRecib; 
+    	$this->surname = $surnameRecib;
     	$this->nick_name = $nickNameRecib;
     }
 
@@ -20,22 +20,22 @@ class Artist
 
     public function getIdArtist()
     {
-    	return $this->id_artist;    	
+    	return $this->id_artist;
     }
 
     public function getNameArtist()
     {
-    	return $this->name;    	
+    	return $this->name;
     }
 
     public function getSurnameArtist()
     {
-    	return $this->surname;    	
+    	return $this->surname;
     }
 
     public function getNickNameArtist()
     {
-    	return $this->nick_name;    	
+    	return $this->nick_name;
     }
 
     //setters
