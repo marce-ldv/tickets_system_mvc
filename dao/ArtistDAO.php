@@ -1,8 +1,8 @@
 <?php
 
-namespace Dao;
+namespace dao;
 
-use Model\Artist as Artist;
+use model\Artist as Artist;
 
 class ArtistDAO extends SingletonDAO
 {
@@ -16,12 +16,12 @@ class ArtistDAO extends SingletonDAO
 	}
 
 	// no lo necesito porque esta el singletonDAO
-	/*public function getInstance() 
+	/*public function getInstance()
 	{
 		if(!self::$instance instanceof self)
 		{
 			self::$instance = new self();
-		}		
+		}
 		return self::$instance;
 	}*/
 
@@ -32,17 +32,17 @@ class ArtistDAO extends SingletonDAO
 		{
 			$sql = "INSERT INTO $this->table (name) VALUES (:name)";
 
-			$pdo = new Connection(); 
+			$pdo = new Connection();
 			$connection = Connection::connect(); // probar si funciona
 			$statement = $connection->prepare($sql);
 
 			$name = $object->getNameArtist();
-			
+
 			$statement->bindParam(":name" , $name);
 
 			$statement->execute();
 
-			return $connection->lastInsertId();			
+			return $connection->lastInsertId();
 		}
 		catch(\PDOException $e)
 		{
@@ -91,4 +91,3 @@ class ArtistDAO extends SingletonDAO
     	}
     }
 }
-

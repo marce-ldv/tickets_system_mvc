@@ -2,7 +2,7 @@
 
 namespace controller;
 
-use Model\Artist;
+use model\Artist;
 
 class ArtistController{
 
