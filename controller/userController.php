@@ -1,6 +1,6 @@
 <?php
 
-namespace Controller;
+namespace controller;
 use Dao\UserDAO as UserDao;
 use Model\User as User;
 
