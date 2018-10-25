@@ -51,7 +51,7 @@
 					die();
 				}
 			}
-
+			
 			public function fetchAllUsers(){
 
 				try{

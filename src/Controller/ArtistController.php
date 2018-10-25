@@ -6,18 +6,16 @@ use Model\Artist;
 
 class ArtistController{
 
-	private $artistDAO;
+	private $artistDao;
 
     public function __construct()
     {
-    	$this->artistDAO = ArtistBDDAO::getInstance(); // te devuelve la instancia de la bbdd de artista
+    	$this->artistDAO = ArtistDAO::getInstance(); // te devuelve la instancia de la bbdd de artista
     }
 
     public function save($name)
     {
-    	$nuevoArtist = new Artist($name); 
-
-
+    	$nuevoArtist = new Artist($name);
     }
 
 
