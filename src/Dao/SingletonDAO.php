@@ -2,16 +2,13 @@
 
 namespace Dao;
 
-class SingletonDAO
-{
+class SingletonDAO{
 	private static $instance = array();
 
-	static function getInstance()
-	{
+	static function getInstance(){
 		$class = get_called_class();
 
-		if(!isset(self::$instance[$class]))
-		{
+		if(!isset(self::$instance[$class])){
 			self::$instance[$class] = new $class;
 		}
 
