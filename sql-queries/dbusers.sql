@@ -17,7 +17,7 @@ CREATE TABLE users(
     id_user BIGINT UNSIGNED AUTO_INCREMENT,
     id_rol BIGINT UNSIGNED,
     username VARCHAR(50) NOT NULL,
-    PASSWORD VARCHAR(30) NOT NULL,
+    pass VARCHAR(30) NOT NULL,
     email VARCHAR(50) NOT NULL,
     id_facebook BIGINT,
 		id_twitter BIGINT,

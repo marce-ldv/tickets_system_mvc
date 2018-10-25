@@ -5,16 +5,16 @@ namespace Model;
 class User{
 
     // TODO: DEBE QUEDAR IGUAL EL MODELO A LA DE LA BASE DE DATOS, ES DECIR EL NOMBRE DE LOS ATRIBUTOS
-    
+
     private $id_user;
-    private $nickname;
+    private $username;
     private $email;
     private $password;
     private $id_role;
     private $id_facebook;
 
-    public function __construct($nickname, $password, $email){
-        $this->nickname = $nickname;
+    public function __construct($username, $password, $email){
+        $this->username = $username;
         $this->password = $password;
         $this->email = $email;
 
@@ -43,19 +43,19 @@ class User{
     /**
      * @return mixed
      */
-    public function getNickname()
+    public function getUsername()
     {
-        return $this->nickname;
+        return $this->username;
     }
 
     /**
-     * @param mixed $nickname
+     * @param mixed $username
      *
      * @return self
      */
-    public function setNickname($nickname)
+    public function setUsername($username)
     {
-        $this->nickname = $nickname;
+        $this->username = $username;
 
         return $this;
     }

@@ -3,14 +3,16 @@
 	use Dao\Connection as Connection;
 	use Dao\SingletonDAO as Singleton;
 	use Model\User as User;
+	use Interfaces\ICrud as ICrud;
 
-	class UserDAO extends Singleton{
+	class UserDAO extends Singleton implements ICrud{
 		protected $table = "users"; /* se agregar para el dia de mañana modificar una vez el nombre de la tabla */
 		private $objInstances = []; //aca van los objetos instanciados desde la base de datos
 		private static $instance;
+		private $pdo;
 
 			public function __construct(){
-
+				$this->pdo = new Connection();
 			}
 /*
 			public static function getInstance()
@@ -21,23 +23,22 @@
 				return self::$instance;
 	    	}
 */
-			public function addUser(User $user) {
+			public function create($value) {
 
 				try {
-					$sql = ("INSERT INTO $this->table (username, PASSWORD, email)
-					VALUES (:username, :PASSWORD, :email)");
+					$sql = ("INSERT INTO $this->table (username, pass, email)
+					VALUES (:username, :pass, :email)");
 
-					$pdo = new Connection();
-					$connection = $pdo->connect(); //devuelve un obj PDO
+					$connection = $this->pdo->connect();
 					$statement = $connection->prepare($sql);
 
-					$username = $user->getNickname();
+					$username = $user->getUsername();
 					$pass = $user->getPassword();
 					$email = $user->getEmail();
 					$role = "user";
 
 					$statement->bindParam(':username', $username);
-					$statement->bindParam(':PASSWORD', $pass);
+					$statement->bindParam(':pass', $pass);
 					$statement->bindParam(':email', $email);
 
 					$statement->execute();
@@ -52,7 +53,11 @@
 				}
 			}
 
-			public function fetchAllUsers(){
+			public function read($id){
+
+			}
+
+			public function readAll(){
 
 				try{
 			        $query = "SELECT * FROM $this->tabla";
@@ -81,6 +86,32 @@
 				}
 			}//end fetch method
 
+			public function update($value){
+				// code...
+			}
+
+			public function delete($id){
+				// code...
+			}
+
+			public function readByUser($username){
+				try{
+	        $sql = "SELECT * FROM $this->table WHERE username = :userParam OR email = :userParam";
+					$connection = $this->pdo->connect();
+	        $statement = $connection->prepare($sql);
+					$statement->bindParam(':userParam', $username);
+	        $statement->execute();
+
+	        if ($statement->fetch()){
+
+	            return TRUE;
+	        }
+	        return FALSE;
+	      }catch(\PDOException $e){
+	        echo $e->getMessage();
+	      }
+			}
+
 			public function mapMethod($dataSet){
 
 		        $dataSet = is_array($dataSet) ? $dataSet : false;
@@ -89,7 +120,7 @@
 		            $this->listado = array_map(function ($p) {
 		                $u = new Usuario(
 		                    $p['username'],
-		                    $p['PASSWORD'],
+		                    $p['pass'],
 		                    $p['email']);
 		                $u->setId($p['id_usuario']);
 		                return $u;
@@ -97,40 +128,7 @@
 		        }
 		    }//mapMethod end
 
-			public function verifyNickname ($nickname) {
-				try{
-	        $sql = "SELECT * FROM $this->table WHERE username = \"$nickname\" LIMIT 1";
-					$pdo = new Connection();
-					$connection = $pdo->connect();
-	        $statement = $connection->prepare($sql);
-	        $statement->execute();
-	        $dataSet = $statement->fetch(\PDO::FETCH_ASSOC);
 
-	        if ( ! empty($dataSet)){
-	            return TRUE;
-	        }
-
-	        return FALSE;
-	      }catch(\PDOException $e){
-	        echo $e->getMessage();
-	      }
-			}//method end
-
-			public function verifyEmail($email){
-	        $sql = "SELECT * FROM $this->table WHERE email = \"$email\" LIMIT 1";
-					$pdo = new Connection();
-					$connection = $pdo->connect();
-	        $statement = $connection->prepare($sql);
-	        $statement->execute();
-	        $dataSet = $statement->fetch(\PDO::FETCH_ASSOC);
-
-	        if ( ! empty($dataSet))
-	        {
-	            return TRUE;
-	        }
-
-	        return FALSE;
-	    }//method end
 
     }//class end
 ?>
