@@ -23,6 +23,8 @@ class Artist
     	return $this->name;
     }
 
+    //setters
+
     public function setIdArtist($idArtistRecib)
     {
     	$this->id_artist = $idArtistRecib;
