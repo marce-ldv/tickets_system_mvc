@@ -2,7 +2,7 @@
 
 namespace Config;
 
-class Router
+class Router // extends singleton ??
 {
 
     public static function go(Request $request)

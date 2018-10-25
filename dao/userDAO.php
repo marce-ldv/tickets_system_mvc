@@ -52,12 +52,17 @@
 					die();
 				}
 			}
+<<<<<<< HEAD:src/Dao/UserDAO.php
+			
+			public function fetchAllUsers(){
+=======
 
 			public function read($id){
 
 			}
 
 			public function readAll(){
+>>>>>>> 550486704a332a16dd6bc0be6e4a0b62fd954094:dao/userDAO.php
 
 				try{
 			        $query = "SELECT * FROM $this->tabla";
