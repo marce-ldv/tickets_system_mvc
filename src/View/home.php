@@ -30,8 +30,8 @@
             <div class="item active" style="background-image:url('<?= URL_IMG . "portada1_cervezas.jpg"?> ');   background-position: 70% 90%;">
                 <div class="carousel-caption" style="top:10%">
                     <h1 data-animation="animated bounceInUp">
-                    La mejor cerveza artesanal </h1>
-                    <a href="/pedido/pedir/" class="btn btn-ghost btn-lg" data-animation="animated zoomInRight">Realiza tu pedido online !</a>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit </h1>
+                    <a href="/pedido/pedir/" class="btn btn-ghost btn-lg" data-animation="animated zoomInRight">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt !</a>
                 </div>
             </div>
             <!-- /.item -->
@@ -39,8 +39,8 @@
             <div class="item" style="background-image:url('<?= URL_IMG . "portada2_cervezas.jpg"?> '); background-position: 50% 50%;">
                 <div class="carousel-caption" style="top:7%">
                     <h1 data-animation="animated zoomInRight">
-                    Mas de 20 años brindando la mejor calidad </h1>
-                    <a href="/pedido/pedir/" class="btn btn-ghost btn-lg" data-animation="animated zoomInRight">Realiza tu pedido online !</a>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit</h1>
+                    <a href="/pedido/pedir/" class="btn btn-ghost btn-lg" data-animation="animated zoomInRight">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt !</a>
                 </div>
             </div>
             <!-- /.item -->
@@ -48,9 +48,9 @@
             <div class="item" style="background-image:url('<?= URL_IMG . "portada3_cervezas.jpg"?>'); background-position: 100% -60px; background-size: cover">
                 <div class="carousel-caption" style="top:15%">
                     <h2 data-animation="animated bounceInLeft">
-                    Layana by WowThemesNet</h2>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit</h2>
                     <h1 data-animation="animated bounceInRight">
-                    Happy Coding</h1>
+                    Lorem ipsum dolor sit amet, consecte</h1>
                     <a href="/pedido/pedir/" class="btn btn-ghost btn-lg" data-animation="animated zoomInRight">Realiza tu pedido online !</a>
                 </div>
             </div>
@@ -77,7 +77,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">NUESTRAS <b>SUCURSALES</b></h2>
+                    <h2 class="section-heading">Lorem ipsum <b>Lorem ipsum</b></h2>
                     <hr class="primary">
                 </div>
             </div>
@@ -93,7 +93,7 @@
             <img src="<?= URL_IMG . 'sucu1.jpg' ?>" alt="" class="img-responsive">
             <h2>Moreno 2371</h2>
             <p>
-               Siguenos en nuestras Redes
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
            </p>
            <div class="team-social">
             <a href="<?= '/ubicacion/googlemaps/' . $objeto='1'; ?>" class="fa fa-map-marker" aria-hidden="true" title="Ubicacion"></a>
@@ -105,10 +105,10 @@
     </div>
     <div class="col-md-4 bg-dark no-padding teambox">
         <img src="<?= URL_IMG . 'sucu2.jpg' ?>" alt="" class="img-responsive">
-        <h2>Av. Constitucion 3476</h2>
+        <h2>Lorem ipsum dolor sit amet</h2>
         <p>
 
-            Siguenos en nuestras Redes
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
         </p>
         <div class="team-social">
             <a href="<?= '/ubicacion/googlemaps/' . $objeto='2'; ?>" class="fa fa-map-marker" aria-hidden="true" title="Ubicacion"></a>
@@ -122,7 +122,7 @@
         <img src="<?= URL_IMG . 'sucu3.jpg' ?>" alt="" class="img-responsive">
         <h2>Güemes 1622</h2>
         <p>
-            Siguenos en nuestras Redes
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
         </p>
         <div class="team-social">
             <a href="<?= '/ubicacion/googlemaps/' . $objeto='3'; ?>" class="fa fa-map-marker" aria-hidden="true" title="Ubicacion"></a>
@@ -141,7 +141,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>Services we offer</h2>
+            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</h2>
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
           </div>
         </div>

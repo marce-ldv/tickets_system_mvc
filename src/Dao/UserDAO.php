@@ -1,9 +1,10 @@
 <?php namespace dao;
 
 	use Dao\Connection as Connection;
+	use Dao\SingletonDAO as Singleton;
 	use Model\User as User;
 
-	class UserDAO {
+	class UserDAO extends Singleton{
 		protected $table = "users"; /* se agregar para el dia de mañana modificar una vez el nombre de la tabla */
 		private $objInstances = []; //aca van los objetos instanciados desde la base de datos
 		private static $instance;
@@ -11,7 +12,7 @@
 			public function __construct(){
 
 			}
-
+/*
 			public static function getInstance()
 	    	{
 				if (!self::$instance instanceof self) {
@@ -19,12 +20,12 @@
 				}
 				return self::$instance;
 	    	}
-
+*/
 			public function addUser(User $user) {
 
 				try {
-					$sql = ("INSERT INTO $this->table (username, pass, email, role_user)
-					VALUES (:username, :pass, :email, :role_user)");
+					$sql = ("INSERT INTO $this->table (username, PASSWORD, email)
+					VALUES (:username, :PASSWORD, :email)");
 
 					$pdo = new Connection();
 					$connection = $pdo->connect(); //devuelve un obj PDO
@@ -36,9 +37,8 @@
 					$role = "user";
 
 					$statement->bindParam(':username', $username);
-					$statement->bindParam(':pass', $pass);
+					$statement->bindParam(':PASSWORD', $pass);
 					$statement->bindParam(':email', $email);
-					$statement->bindParam(':role_user', $role);
 
 					$statement->execute();
 
@@ -89,7 +89,7 @@
 		            $this->listado = array_map(function ($p) {
 		                $u = new Usuario(
 		                    $p['username'],
-		                    $p['pass'],
+		                    $p['PASSWORD'],
 		                    $p['email']);
 		                $u->setId($p['id_usuario']);
 		                return $u;

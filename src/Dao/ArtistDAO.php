@@ -66,14 +66,28 @@ class ArtistDAO extends SingletonDAO
     		$connection = Connection::connect();
     		$statement = $connection->prepare($sql);
 
-    		
+    		$statement->execute();
 
+			$dataSet = $statement->fetchAll(\PDO::FETCH_ASSOC);
 
+			$this->mapMethod($dataSet); // realizar metodo
 
+			if(!empty($this->objInstances))
+			{
+				return $this->objInstances;
+			}
 
-
-
-
+			return null;
+    	}
+    	catch(\PDOException $e)
+    	{
+    		echo $e->getMessage();
+    		die();
+    	}
+    	catch(Exception $e)
+    	{
+    		echo $e->getMessage();
+    		die();
     	}
     }
 }

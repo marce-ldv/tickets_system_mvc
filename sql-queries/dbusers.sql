@@ -20,8 +20,8 @@ CREATE TABLE users(
     PASSWORD VARCHAR(30) NOT NULL,
     email VARCHAR(50) NOT NULL,
     id_facebook BIGINT,
-	id_twitter BIGINT,
-	id_google BIGINT,
+		id_twitter BIGINT,
+		id_google BIGINT,
     CONSTRAINT pk_id_user PRIMARY KEY (id_user),
     CONSTRAINT uniq_username UNIQUE (username),
     CONSTRAINT uniq_email UNIQUE (email,username),
@@ -51,7 +51,7 @@ CREATE TABLE events(
 	title VARCHAR(50) NOT NULL,
 	CONSTRAINT pk_id_event PRIMARY KEY (id_event),
 	CONSTRAINT fk_id_category FOREIGN KEY (id_category) REFERENCES categories(id_category) ON DELETE CASCADE
-); 
+);
 
 CREATE TABLE artists(
 	id_artist BIGINT UNSIGNED AUTO_INCREMENT,
@@ -76,9 +76,9 @@ CREATE TABLE type_areas(
 CREATE TABLE calendars(
 	id_calendar BIGINT UNSIGNED AUTO_INCREMENT,
 	id_event BIGINT UNSIGNED,
-	id_place_event BIGINT UNSIGNED, 
-	date_start DATETIME NOT NULL,
-	date_end DATETIME NOT NULL,
+	id_place_event BIGINT UNSIGNED,
+	date_start DATE NOT NULL,
+	date_end DATE NOT NULL,
 	CONSTRAINT pk_id_calendar PRIMARY KEY (id_calendar),
 	CONSTRAINT fk_id_event FOREIGN KEY (id_event) REFERENCES events(id_event) ON DELETE CASCADE,
 	CONSTRAINT fk_id_place_event FOREIGN KEY (id_place_event) REFERENCES place_events(id_place_event) ON DELETE CASCADE
@@ -117,9 +117,9 @@ CREATE TABLE purchases(
 CREATE TABLE lines_purchases(
 	id_line_purchase BIGINT UNSIGNED AUTO_INCREMENT,
 	id_purchase BIGINT UNSIGNED,
-	id_event_area BIGINT UNSIGNED,		
-	quantity INT NOT NULL,
-	price INT NOT NULL,
+	id_event_area BIGINT UNSIGNED,
+	quantity INT,
+	price INT,
 	CONSTRAINT pk_id_line_purchase PRIMARY KEY (id_line_purchase),
 	CONSTRAINT fk_id_purchase FOREIGN KEY (id_purchase) REFERENCES purchases (id_purchase) ON DELETE CASCADE,
 	CONSTRAINT fk_id_area_event FOREIGN KEY (id_event_area) REFERENCES area_events(id_event_area) ON DELETE CASCADE
@@ -127,10 +127,10 @@ CREATE TABLE lines_purchases(
 
 CREATE TABLE tickets(
 	id_ticket BIGINT UNSIGNED AUTO_INCREMENT,
-	id_line_purchase BIGINT UNSIGNED, 
-	number_ticket INT NOT NULL,
+	id_line_purchase BIGINT UNSIGNED,
+	number_n INT,
 	code_qr VARCHAR(50) NOT NULL,
 	CONSTRAINT pk_id_ticket PRIMARY KEY (id_ticket),
 	CONSTRAINT uniq_code_qr UNIQUE (code_qr),
-	CONSTRAINT fk_id_line_purchase FOREIGN KEY (id_line_purchase) REFERENCES lines_purchases (id_line_purchase) ON DELETE CASCADE 
+	CONSTRAINT fk_id_line_purchase FOREIGN KEY (id_line_purchase) REFERENCES lines_purchases (id_line_purchase) ON DELETE CASCADE
 );
