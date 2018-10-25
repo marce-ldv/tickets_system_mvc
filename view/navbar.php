@@ -1,6 +1,6 @@
 
 
-<nav id="mainNav primary_nav_wrap" class="navbar navbar-default navbar-fixed-top" style="background-color:black;">
+<nav id="mainNav primary_nav_wrap" class="navbar navbar-default navbar-top" style="background-color:black;">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -45,10 +45,10 @@
                             <a class="page-scroll" style="color:white" href="/">Inicio</a>
                         </li>
                         <li>
-                            <a class="page-scroll " style="color:white" href="/view/login/">Login</a>
+                            <a class="page-scroll " style="color:white" href="<?= VIEW_URL ?>/view/login/">Login</a>
                         </li>
                         <li>
-                            <a class="page-scroll " style="color:white" href="/view/register/">Register</a>
+                            <a class="page-scroll " style="color:white" href="<?= VIEW_URL ?>/view/register/">Register</a>
                         </li>
                     </ul>
                 </nav>

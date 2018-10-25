@@ -1,7 +1,7 @@
-<?php 
-namespace Model;
+<?php
+namespace model;
 
-class Customer  
+class Customer
 {
 	private $id_customer;
 	private $id_user;
@@ -10,7 +10,7 @@ class Customer
 	private $dni;
 
 
-	
+
 
 	public function __construct($id_user, $name, $surname, $dni)
 	{

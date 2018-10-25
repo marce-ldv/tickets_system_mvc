@@ -1,4 +1,15 @@
 <?php
+
+require "config/autoload.php";
+require "config/config.php";
+
+use config\Autoload as Autoload;
+use config\Request as Request;
+use config\Router as Router;
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 /*
  * Si la variable de sesión esta vacía, entonces
  * inicio la sesión...
@@ -30,13 +41,7 @@ date_default_timezone_set('America/Argentina/Buenos_Aires');
  * echo "El identifcador de esta sesión es: $identifcador";
  */
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
-require_once '../Config/Config.php';
-require_once '../Config/Autoload.php';
 
-Config\Autoload::start();
-
-Config\Router::go(new Config\Request());
+Autoload::start();
+Router::go(new Request());
