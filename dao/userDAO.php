@@ -1,9 +1,9 @@
 <?php namespace dao;
 
-	use Dao\Connection as Connection;
-	use Dao\SingletonDAO as Singleton;
-	use Model\User as User;
-	use Interfaces\ICrud as ICrud;
+	use dao\Connection as Connection;
+	use dao\SingletonDAO as Singleton;
+	use model\User as User;
+	use interfaces\ICrud as ICrud;
 
 	class UserDAO extends Singleton implements ICrud{
 		protected $table = "users"; /* se agregar para el dia de mañana modificar una vez el nombre de la tabla */
@@ -52,17 +52,12 @@
 					die();
 				}
 			}
-<<<<<<< HEAD:src/Dao/UserDAO.php
-			
-			public function fetchAllUsers(){
-=======
 
 			public function read($id){
 
 			}
 
 			public function readAll(){
->>>>>>> 550486704a332a16dd6bc0be6e4a0b62fd954094:dao/userDAO.php
 
 				try{
 			        $query = "SELECT * FROM $this->tabla";

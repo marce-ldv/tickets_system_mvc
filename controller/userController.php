@@ -1,8 +1,8 @@
 <?php
 
 namespace controller;
-use Dao\UserDAO as UserDao;
-use Model\User as User;
+use dao\UserDAO as UserDao;
+use model\User as User;
 
 // TODO: HAY QUE MODIFICAR LA LLAMADA A LAS VISTAS, DEBE LLAMAR AL METODO DE LA CONTROLADORA Y NO USAR REQUIRED NI INCLUDE
 class UserController{
