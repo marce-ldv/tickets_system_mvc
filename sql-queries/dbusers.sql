@@ -57,7 +57,7 @@ CREATE TABLE artists(
 	id_artist BIGINT UNSIGNED AUTO_INCREMENT,
 	name VARCHAR(50) NOT NULL,
 	CONSTRAINT id_artist PRIMARY KEY (id_artist),
-	CONSTRAINT nick_name UNIQUE (nick_name)
+	CONSTRAINT name UNIQUE (name)
 );
 
 CREATE TABLE place_events(

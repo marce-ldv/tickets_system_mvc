@@ -30,7 +30,7 @@
 				  </div>
 				<?php }?>
 
-				<form id="form_r" method="post" action="/user/register/" id="contactform" class="text-left "autocomplete="off" enctype= 'multipart/form-data'>
+				<form id="form_r" method="post" action="<?= VIEW_URL ?>/user/register/" id="contactform" class="text-left "autocomplete="off" enctype= 'multipart/form-data'>
 
 
 					<input required name="username" type="text" class="col-md-12 norightborder btn1" placeholder="Nombre de usuario">

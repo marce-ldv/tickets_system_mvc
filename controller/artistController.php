@@ -1,9 +1,5 @@
 <?php
-<<<<<<< HEAD:controller/artistController.php
-//sdas
-=======
 
->>>>>>> 8bd9a2edee8dfc9df218e57cbb4bbf4109f2b985:controller/artistController.php
 namespace controller;
 
 use Model\Artist;

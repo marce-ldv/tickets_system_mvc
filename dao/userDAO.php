@@ -23,7 +23,7 @@
 				return self::$instance;
 	    	}
 */
-			public function create($value) {
+			public function create($user) {
 
 				try {
 					$sql = ("INSERT INTO $this->table (username, pass, email)

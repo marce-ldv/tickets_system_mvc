@@ -18,7 +18,7 @@
 						Thank you!
 					</div>
 				</div>
-				<form id="form_r" method="post" action="/user/login/" id="loginform" class="text-left "autocomplete="off" enctype= 'multipart/form-data'>
+				<form id="form_r" method="post" action="<?= VIEW_URL ?>/user/login/" id="loginform" class="text-left "autocomplete="off" enctype= 'multipart/form-data'>
 
 					<p style="text-align: center;">
 						<strong style="color:white">

@@ -43,7 +43,7 @@ class UserController{
           // TODO: Conviene modularizar y haverificar el usuario en la misma controladora
     			if ( ! $user_dao->readByUser($username) && (! $user_dao->readByUser($email))) {
     					$user = new User($username,$pass,$email);
-    					$id_usuario = $user_dao->addUser($user);
+    					$id_usuario = $user_dao->create($user);
     					$user->setIdUser($id_usuario);
     					$regComplete = TRUE;
     			}
@@ -58,7 +58,7 @@ class UserController{
 
     				case FALSE:
             require(URL_VIEW . "header.php");
-            $alert = $this->$messageWrong;
+            $alert = $this->messageWrong;
     				require(URL_VIEW . "register.php");
             require(URL_VIEW . "footer.php");
     				break;
