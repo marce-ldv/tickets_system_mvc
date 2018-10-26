@@ -26,8 +26,8 @@
 						</strong>
 					</p>
 
-					<input  name="nickname" autocomplete="off" type="text" class="col-md-6 norightborder btn1" placeholder="Nickname de Usuario">
-					<input  name="pass" autocomplete="off" type="password" class="col-md-6 norightborder btn1" placeholder="Contraseña">
+					<input  name="nickname" autocomplete="off" type="text" class="col-md-12 norightborder btn1" placeholder="Nickname de Usuario">
+					<input  name="pass" autocomplete="off" type="password" class="col-md-12 norightborder btn1" placeholder="Contraseña">
 					<button type="submit" class="contact submit btn btn-primary btn-xl pull-right " style="  border-radius:15px;">Login</button>
 
 				</form>

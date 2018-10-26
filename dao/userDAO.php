@@ -52,15 +52,30 @@
 					die();
 				}
 			}
-
+			// TODO: Implementar bien este metodo, debe traer un solo usuario
 			public function read($id){
+				try{
+			        $query = "SELECT * FROM $this->table";
 
+							$pdo = new Connection();
+							$connection = $pdo->connect();
+			        $statement = $connection->prepare($query);
+
+			        $statement->execute();
+							
+			    }catch(\PDOException $e){
+					echo $e->getMessage();
+					die();
+				}catch(Exception $e){
+					echo $e->getMessage();
+					die();
+				}
 			}
 
 			public function readAll(){
 
 				try{
-			        $query = "SELECT * FROM $this->tabla";
+			        $query = "SELECT * FROM $this->table";
 
 							$pdo = new Connection();
 							$connection = $pdo->connect();

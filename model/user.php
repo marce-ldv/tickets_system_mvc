@@ -2,7 +2,7 @@
 
 namespace model;
 
-class User{
+class User implements \Serializable{
 
     // TODO: DEBE QUEDAR IGUAL EL MODELO A LA DE LA BASE DE DATOS, ES DECIR EL NOMBRE DE LOS ATRIBUTOS
 
@@ -119,4 +119,19 @@ class User{
 
         return $this;
     }
+
+    public function serialize(){
+        return serialize([
+            $this->username,
+            $this->email
+        ]);
+    }
+
+    public function unserialize($data){
+        list(
+            $this->username,
+            $this->email
+        ) = unserialize($data);
+    }
+
 }

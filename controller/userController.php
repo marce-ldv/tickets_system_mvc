@@ -23,7 +23,7 @@ class UserController{
     public function login($username,$pass){
         try{
           $user_dao = $this->userDao->readByUser($username);
-          print_r($user_dao);
+          //$session->user = $user_dao->serialize();
 
         } catch(\PDOException $pdo_error) {
           require(URL_VIEW . "header.php");
