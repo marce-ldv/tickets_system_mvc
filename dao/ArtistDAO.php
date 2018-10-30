@@ -73,7 +73,8 @@ class ArtistDAO extends SingletonDAO implements ICrud
 
 			$dataSet[] = $statement->fetch(\PDO::FETCH_ASSOC);
 
-			if($dataSet[0])  // como siempre va a traer un solo objeto pongo dataSet[0] ya que estoy 
+// como siempre va a traer un solo objeto pongo dataSet[0] ya que estoy parado en el primer lugar
+			if($dataSet[0])  
 			{
 				$this->mapMethod($dataSet);
 			}

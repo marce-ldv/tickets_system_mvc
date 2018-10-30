@@ -1,5 +1,4 @@
 
-
 <nav id="mainNav primary_nav_wrap" class="navbar navbar-default navbar-top" style="background-color:black;">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -10,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="/">Tickets System</a>
+            <a class="navbar-brand page-scroll" href=" <?= VIEW_URL ?> ">Tickets System</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <?php if(isset($_SESSION['rol'])) {?>
@@ -19,6 +18,7 @@
                         <ul class="nav navbar-nav navbar-right" >
                             <li>
                                 <a class="page-scroll" style="color:white" href="#">Inicio</a>
+
                             </li>
                             <li>
                                 <a class="page-scroll" style="color:orange" href="#"><?= $_SESSION['nickname'] ?> </a>
@@ -42,7 +42,7 @@
                 <nav id="primary_nav_wrap">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a class="page-scroll" style="color:white" href="/">Inicio</a>
+                            <a class="page-scroll" style="color:white" href="<?= VIEW_URL ?>">Inicio</a>
                         </li>
                         <li>
                             <a class="page-scroll " style="color:white" href="<?= VIEW_URL ?>/view/login/">Login</a>
