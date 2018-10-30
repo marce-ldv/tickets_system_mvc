@@ -6,8 +6,7 @@ class Artist
 	private $id_artist;
 	private $name;
 
-    public function __construct($idArtistRecib, $nameRecib){
-    	$this->id_artist = $idArtistRecib;
+    public function __construct($nameRecib){
     	$this->name = $nameRecib;
     }
 

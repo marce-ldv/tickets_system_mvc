@@ -12,7 +12,8 @@
             <a class="navbar-brand page-scroll" href=" <?= VIEW_URL ?> ">Tickets System</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <?php if(isset($_SESSION['rol'])) {?>
+        <!-- se cambio el rol -->
+        <?php if(!empty($_SESSION)) {?>
                 <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
                     <nav id="primary_nav_wrap">
                         <ul class="nav navbar-nav navbar-right" >

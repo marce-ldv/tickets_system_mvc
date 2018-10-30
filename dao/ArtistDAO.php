@@ -3,7 +3,7 @@
 namespace dao;
 
 use model\Artist as Artist;
-use Interface\ICrud as ICrud;
+use interfaces\ICrud as ICrud;
 
 class ArtistDAO extends SingletonDAO implements ICrud
 {
@@ -32,12 +32,11 @@ class ArtistDAO extends SingletonDAO implements ICrud
 	{
 		try
 		{
-			$sql = "INSERT INTO $this->table (name) VALUES (:name)";
+			$sql = "INSERT INTO $this->table (name) VALUE (:name)";
 
-			$connection = $this->pdo->connect(); // probar si funciona $connection = Connection::connect();
+			$connection = Connection::connect(); // probar si funciona $connection = Connection::connect();
 			$statement = $connection->prepare($sql);
-
-			$name = $object->getNameArtist();
+			$name = $value->getNameArtist();
 
 			$statement->bindParam(":name" , $name);
 
@@ -47,13 +46,11 @@ class ArtistDAO extends SingletonDAO implements ICrud
 		}
 		catch(\PDOException $e)
 		{
-			echo $e->getMessage();
-			die();
+			throw $e;
 		}
 		catch(Exception $e)
 		{
-			echo $e->getMessage();
-			die();
+			throw $e;
 		}
 	}
 
@@ -116,9 +113,9 @@ class ArtistDAO extends SingletonDAO implements ICrud
 
 			$this->mapMethod($dataSet); 
 
-			if(!empty($this->objInstances))
+			if(!empty($this->list))
 			{
-				return $this->objInstances;
+				return $this->list;
 			}
 
 			return null;
@@ -176,7 +173,7 @@ class ArtistDAO extends SingletonDAO implements ICrud
 
 
 			$statement->execute;
-		}
+		}catch(\PDOException $e){}
 	}
 
 	public function mapMethod($dataSet)
@@ -185,9 +182,9 @@ class ArtistDAO extends SingletonDAO implements ICrud
 
 		if($dataSet)
 		{
-			$this->listado = array_map(function ($p)
+			$this->list = array_map(function ($p)
 			{
-				$u = new Usuario($p['name']);
+				$u = new Artist($p['name']);
 				$u->setIdArtist($p['id_artist']);
 
 				return $u;
