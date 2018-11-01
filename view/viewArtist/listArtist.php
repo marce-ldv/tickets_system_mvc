@@ -14,14 +14,19 @@
 			    </tr>
 			  </thead>
 			  <tbody>
-				<?php foreach ($listArtists as $key => $value) { ?>
-			    <tr>
-			      <th scope="row"> <?= $value->getIdArtist() ?> </th>
-			      <td> <?= $value->getNameArtist() ?> </td>
-			      <td><button class="btn btn-primary"> Editar </button></td>
-			      <td><button class="btn btn-danger">Eliminar</button></td>
-			    </tr>
-				<?php } ?>
+				<?php 
+				if(isset($listArtists)) {
+					foreach ($listArtists as $key => $value) { ?>
+				    <tr>
+				      <th scope="row"> <?= $value->getIdArtist() ?> </th>
+				      <td> <?= $value->getNameArtist() ?> </td>
+				      <td><a href="<?= VIEW_URL ?>/artist/updateView/<?= $value->getIdArtist() ?>" class="btn btn-primary"> Editar </a></td>
+				      <td><a href="<?= VIEW_URL ?>/artist/delete/<?= $value->getIdArtist() ?>" class="btn btn-primary"> Eliminar </a></td>
+				    </tr>
+				<?php 
+					}
+				} 
+				?>
 			  </tbody>
 			</table>
 		</div>

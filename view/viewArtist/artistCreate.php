@@ -5,8 +5,8 @@
 	<div class="row justify-content-center">
 		<div class="col-md-6 col-12">
 			<?php if(isset($mensaje)) { ?>
-				<div class="alert alert-<?= $mensaje[1] ?>" role="alert">
-						<?= $mensaje[0] ?>
+				<div class="alert alert-<?= $mensaje['tipo'] ?>" role="alert">
+						<?= $mensaje['mensaje'] ?>
 				</div>
 			 <?php } ?>
 		</div>

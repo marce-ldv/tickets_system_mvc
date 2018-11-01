@@ -15,7 +15,7 @@ class ViewController
 
     }
 
-    public function index(){
+    public function index($alert = null){
       include URL_VIEW . 'header.php';
       require(URL_VIEW . "home.php");
       include URL_VIEW . 'footer.php';
@@ -36,6 +36,12 @@ class ViewController
     public function dashboard(){
       include URL_VIEW . 'header.php';
       require(URL_VIEW . "dashboard.php");
+      include URL_VIEW . 'footer.php';
+    }
+
+    public function artistList($listArtists){
+      include URL_VIEW . 'header.php';
+      require(URL_VIEW . "viewArtist/listArtist.php");
       include URL_VIEW . 'footer.php';
     }
 }

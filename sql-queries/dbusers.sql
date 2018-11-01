@@ -11,7 +11,7 @@ CREATE TABLE roles(
 	id_rol BIGINT UNSIGNED AUTO_INCREMENT,
 	type_rol VARCHAR(50) NOT NULL,
 	CONSTRAINT pk_id_rol PRIMARY KEY (id_rol)
-);
+);	
 
 CREATE TABLE users(
     id_user BIGINT UNSIGNED AUTO_INCREMENT,
@@ -56,8 +56,8 @@ CREATE TABLE events(
 CREATE TABLE artists(
 	id_artist BIGINT UNSIGNED AUTO_INCREMENT,
 	name VARCHAR(50) NOT NULL,
-	CONSTRAINT id_artist PRIMARY KEY (id_artist),
-	CONSTRAINT name UNIQUE (name)
+	CONSTRAINT pk_id_artist PRIMARY KEY (id_artist),
+	CONSTRAINT unq_name UNIQUE (name)
 );
 
 CREATE TABLE place_events(
