@@ -13,11 +13,10 @@ class User implements \Serializable{
     private $id_role;
     private $id_facebook;
 
-    public function __construct($username, $password, $email){
+    public function __construct($username='', $password='', $email=''){
         $this->username = $username;
         $this->password = $password;
         $this->email = $email;
-
     }
 
     /**

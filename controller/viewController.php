@@ -3,6 +3,7 @@
 namespace controller;
 use dao\UserDAO as UserDao;
 
+
 /**
  * summary
  */
@@ -38,4 +39,18 @@ class ViewController
       require(URL_VIEW . "dashboard.php");
       include URL_VIEW . 'footer.php';
     }
+
+    public function viewArtist(){
+      include URL_VIEW . 'header.php';
+  		require(URL_VIEW . "viewArtist/artistCreate.php");
+  		include URL_VIEW . 'footer.php';
+    }
+
+    public function listArtists($listArtists = null){
+      include URL_VIEW . 'header.php';
+  		require(URL_VIEW . "viewArtist/listArtist.php");
+  		include URL_VIEW . 'footer.php';
+    }
+
+
 }

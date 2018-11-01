@@ -43,11 +43,7 @@
                 <nav id="primary_nav_wrap">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-<<<<<<< HEAD
                             <a class="page-scroll" style="color:white" href="<?= VIEW_URL ?>/view/home/">Inicio</a>
-=======
-                            <a class="page-scroll" style="color:white" href="<?= VIEW_URL ?>">Inicio</a>
->>>>>>> 4b103e9f01118b7aa216e168aa775fa4effd15ea
                         </li>
                         <li>
                             <a class="page-scroll " style="color:white" href="<?= VIEW_URL ?>/view/login/">Login</a>

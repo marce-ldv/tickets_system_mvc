@@ -62,7 +62,7 @@
 			        $statement = $connection->prepare($query);
 
 			        $statement->execute();
-							
+
 			    }catch(\PDOException $e){
 					echo $e->getMessage();
 					die();
@@ -108,7 +108,7 @@
 			public function delete($id){
 				// code...
 			}
-
+/*
 			public function readByUser($username){
 				try{
 	        $sql = "SELECT * FROM $this->table WHERE username = :userParam OR email = :userParam";
@@ -122,6 +122,31 @@
 	            return TRUE;
 	        }
 	        return FALSE;
+	      }catch(\PDOException $e){
+	        echo $e->getMessage();
+	      }
+			}
+*/
+			public function readByUser($username){
+				try{
+	        $sql = "SELECT * FROM $this->table WHERE username = :userParam OR email = :userParam";
+					$connection = $this->pdo->connect();
+	        $statement = $connection->prepare($sql);
+					$statement->bindParam(':userParam', $username);
+	        $statement->execute();
+
+					$var = $statement->fetch();
+					if(empty($var)){
+						return false;
+					}
+
+					$modelUser = new User(
+						$var['username'],
+						$var['pass'],
+						$var['email']
+					);
+
+					return $modelUser;
 	      }catch(\PDOException $e){
 	        echo $e->getMessage();
 	      }
