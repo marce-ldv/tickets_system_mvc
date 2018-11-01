@@ -64,7 +64,8 @@
               Lorem ipsum dolor sit amet, consectetur adipisicing elit</h2>
               <h1 data-animation="animated bounceInRight">
                 Lorem ipsum dolor sit amet, consecte</h1>
-                <a href="/pedido/pedir/" class="btn btn-ghost btn-lg" data-animation="animated zoomInRight">Realiza tu pedido online !</a>
+                <a href="/pedido/pedir/" class="btn btn-ghost btn-lg" data-animation="animated zoomInRight">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt !</a>
               </div>
             </div>
             <!-- /.item -->
@@ -104,7 +105,7 @@
       <section class="no-padding">
         <div class="col-md-4 bg-primary no-padding teambox">
           <img src="<?= URL_IMG . 'sucu1.jpg' ?>" alt="" class="img-responsive">
-          <h2>Moreno 2371</h2>
+          <h2>Lorem ipsum</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
           </p>
@@ -133,7 +134,7 @@
         </div>
         <div class="col-md-4 bg-primary no-padding teambox">
           <img src="<?= URL_IMG . 'sucu3.jpg' ?>" alt="" class="img-responsive">
-          <h2>Güemes 1622</h2>
+          <h2>Lorem ipsum</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
           </p>
@@ -165,7 +166,7 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-8 mx-auto">
-              <h2>Contact us</h2>
+              <h2>Lorem ipsum</h2>
               <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
             </div>
           </div>

@@ -10,7 +10,7 @@ define("DB_HOST", "localhost");
 
 // Constantes front
 define('ROOT',  dirname(__DIR__) . "/");
-define('VIEW_URL', '/tickets_system_mvc');
+define('VIEW_URL', '/tickets_system_mvc'); // raiz del proyecto 
 define("URL_VIEW",  ROOT . '/View/');
 define("URL_FONT_AWESOME", VIEW_URL . '/public_html/font-awesome/');
 define("URL_FONTAWESOME", VIEW_URL . '/public_html/fontawesome/');
