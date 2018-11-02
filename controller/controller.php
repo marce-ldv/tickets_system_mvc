@@ -32,5 +32,18 @@ class Controller{
     header("location: ". VIEW_URL . $url);
   }
 
+  public function render($path, $options = "") {
+        if ( ! empty($options)) {
+            forEach($options as $key => $value) {
+                ${$key} = $value;
+            }
+        }
+
+        include URL_VIEW . 'header.php';
+        //print_r(URL_VIEW . "$path" . ".php");
+        require(URL_VIEW . "$path" . ".php");
+        include URL_VIEW . 'footer.php';
+    }
+
 
 }

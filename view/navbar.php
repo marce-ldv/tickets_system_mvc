@@ -44,7 +44,7 @@
         <nav id="primary_nav_wrap">
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a class="page-scroll" style="color:white" href="<?= VIEW_URL ?>/default/home/">Inicio</a>
+              <a class="page-scroll" style="color:white" href="<?= VIEW_URL ?>">Inicio</a>
             </li>
             <li>
               <a class="page-scroll " style="color:white" href="<?= VIEW_URL ?>/default/login/">Login</a>

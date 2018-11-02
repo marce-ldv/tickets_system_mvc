@@ -8,7 +8,7 @@ use controller\Controller as Controller;
 // TODO: HAY QUE MODIFICAR LA LLAMADA A LAS VISTAS, DEBE LLAMAR AL METODO DE LA CONTROLADORA Y NO USAR REQUIRED NI INCLUDE
 class UserController extends Controller{
 
-  public $messageSucess = "Registro Exitoso";
+  public $messageSuccess = "Registro Exitoso";
   public $messageWrong = "Hubo un problema y no se pudo completar el registro";
 
   protected $userDao;
@@ -43,7 +43,7 @@ class UserController extends Controller{
       }
 
     } catch(\PDOException $pdo_error) {
-        $this->viewController->login();
+      $this->viewController->login();
     } catch(\Exception $error) {
       echo $error->getMessage();
       die();
@@ -68,17 +68,16 @@ class UserController extends Controller{
       switch ($regComplete) {
 
         case TRUE:
-        require(URL_VIEW . "header.php");
-        $alert = $this->messageSucess;
-        require(URL_VIEW . 'home.php');
-        require(URL_VIEW . "footer.php");
+        //$alert = $this->messageSucess;
+        $this->render("home", array(
+          "alert" => $this->messageSuccess
+        ));
         break;
 
         case FALSE:
-        require(URL_VIEW . "header.php");
-        $alert = $this->messageWrong;
-        require(URL_VIEW . "register.php");
-        require(URL_VIEW . "footer.php");
+        $this->render("register", array(
+          "alert" => $this->$messageWrong
+        ));
         break;
       }
 

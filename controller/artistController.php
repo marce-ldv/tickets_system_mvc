@@ -33,9 +33,7 @@ class ArtistController extends Controller{
 			$mensaje[1] = "danger";
 		}
 
-		include URL_VIEW . 'header.php';
-		require(URL_VIEW . "viewArtist/artistCreate.php");
-		include URL_VIEW . 'footer.php';
+		$this->render("viewArtist/artistCreate");
 	}
 
 	public function create()
@@ -43,9 +41,10 @@ class ArtistController extends Controller{
 		//if($this->session->__isset('rol')){
 		//	$rol = $this->session->__get('rol');
 		//	if($rol === 'admin'){
-		include URL_VIEW . 'header.php';
-		require(URL_VIEW . "viewArtist/artistCreate.php");
-		include URL_VIEW . 'footer.php';
+		if( ! $this->isLogged())
+			$this->redirect('/default/login');
+		else
+			$this->render("viewArtist/artistCreate");
 		//	}else {
 		//		echo "NO TENES SUFICIENTES PRIVILEGIOS";
 		//	}
@@ -59,9 +58,12 @@ class ArtistController extends Controller{
 	{
 		$listArtists = $this->artistDao->readAll();
 
-		include URL_VIEW . 'header.php';
-		require(URL_VIEW . "viewArtist/listArtist.php");
-		include URL_VIEW . 'footer.php';
+		if( ! $this->isLogged())
+			$this->redirect('/default/login');
+		else
+			$this->render("viewArtist/listArtist",array(
+			'listArtists' => $listArtists
+		));
 
 	}
 
