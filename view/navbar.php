@@ -1,66 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href=" <?= VIEW_URL ?> ">TICKET SYSTEM</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <?php if ( $this->isLogged()) {?>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <?php echo $this->getToken()->getUsername(); ?>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">TICKETS</a>
+          <a class="dropdown-item" href="#">ARTISTAS</a>
+          <a class="dropdown-item" href="#">CREAR ARTISTA</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?= VIEW_URL ?>/user/logout/">SALIR</a>
+      </li>
+      <?php }else {?>
+      <li class="nav-item">
+        <a class="nav-link" href="<?= VIEW_URL ?>/default/login/">LOGIN</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?= VIEW_URL ?>/default/register/">REGISTER</a>
+      </li>
+      <?php } ?>
 
-<nav id="mainNav primary_nav_wrap" class="navbar navbar-default navbar-top" style="background-color:black;">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand page-scroll" href=" <?= VIEW_URL ?> ">Tickets System</a>
-    </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <!-- se cambio el rol -->
-    <?php
-    if($this->isLogged()) {?>
-      <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
-        <nav id="primary_nav_wrap">
-          <ul class="nav navbar-nav navbar-right" >
-            <li>
-              <a class="page-scroll" style="color:white" href="#">Inicio</a>
-
-            </li>
-            <li>
-              <a class="page-scroll" style="color:orange" href="#"><?= $this->getToken()->getUsername() ?> </a>
-              <ul>
-                <li><a href="#">opciones</a></li>
-              </ul>
-            </li>
-            <?php if(isset($notifiaciones)) { ?>
-              <li>
-                <a class="page-scroll" style="color:green;cursor:pointer" data-target="#notiModal" data-toggle="modal" >Notifiaciones</a>
-              </li>
-            <?php } ?>
-            <li>
-              <a class="page-scroll" style="color:white" href="<?= VIEW_URL ?>/user/logout/">Salir</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    <?php }else{ ?>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" id="primary_nav_wrap">
-        <nav id="primary_nav_wrap">
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a class="page-scroll" style="color:white" href="<?= VIEW_URL ?>">Inicio</a>
-            </li>
-            <li>
-              <a class="page-scroll " style="color:white" href="<?= VIEW_URL ?>/default/login/">Login</a>
-            </li>
-            <li>
-              <a class="page-scroll " style="color:white" href="<?= VIEW_URL ?>/default/register/">Register</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-
-    <?php } ?>
-    <!-- /.navbar-collapse -->
+      <!-- <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li> -->
+    </ul>
   </div>
-  <!-- /.container -->
 </nav>
 
 
