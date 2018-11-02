@@ -4,16 +4,21 @@ namespace controller;
 use dao\UserDAO as UserDao;
 use model\User as User;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use helpers\Session as Session;
 >>>>>>> 17a4373c224feb3e215537f8efd4dc977e669080
 use controller\ViewController as ViewController;
+=======
+use controller\Controller as Controller;
+>>>>>>> a5b2be7cf7f58dc8bf0991991863852c7785486f
 
 // TODO: HAY QUE MODIFICAR LA LLAMADA A LAS VISTAS, DEBE LLAMAR AL METODO DE LA CONTROLADORA Y NO USAR REQUIRED NI INCLUDE
-class UserController{
+class UserController extends Controller{
 
   public $messageSuccess = "Registro Exitoso";
   public $messageWrong = "Hubo un problema y no se pudo completar el registro";
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     protected $userDao;
@@ -29,19 +34,20 @@ class UserController{
 =======
   public $session;
   private $viewController;
+=======
+>>>>>>> a5b2be7cf7f58dc8bf0991991863852c7785486f
 
   protected $userDao;
 
   // TODO: IMPLEMENTAR CLASE CONCRETA PARA NO REPETIR CODIGOO
 
   function __construct() {
-    $this->session = Session::getInstance();
+    parent::__construct();
     $this->userDao = UserDao::getInstance();
-    $this->viewController = new ViewController();
   }
 
   public function index(){
-    require(URL_VIEW . "home.php");
+    $this->indexView();
   }
 
   public function login($username,$pass){
@@ -52,16 +58,18 @@ class UserController{
         $this->viewController->register();
       }
 
-      if(password_verify($pass,$user->getPassword())){
+      if(password_verify($pass,$user->getPassword() ) ){
+        //una vez que verifico que las password coinciden, antes de autoredireccionar al usuario, trabajamos con session
+        $this->session->token = $user->serialize();
+
         $this->viewController->dashboard();
+
       }else{
         $this->viewController->login();
       }
 
     } catch(\PDOException $pdo_error) {
-      require(URL_VIEW . "header.php");
-      require(URL_VIEW . "login.php");
-      require(URL_VIEW . "footer.php");
+        $this->viewController->login();
     } catch(\Exception $error) {
       echo $error->getMessage();
       die();
@@ -102,9 +110,7 @@ class UserController{
       }
 
     } catch(\PDOException $pdo_error) {
-      require(URL_VIEW . "header.php");
-      require(URL_VIEW . "registrarse.php");
-      require(URL_VIEW . "footer.php");
+      $this->viewController->registrarse();
     } catch(\Exception $error) {
       echo $error->getMessage();
       die();

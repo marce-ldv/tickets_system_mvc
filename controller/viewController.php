@@ -2,8 +2,14 @@
 
 namespace controller;
 use dao\UserDAO as UserDao;
+use controller\Controller as Controller;
 
 
+class ViewController extends Controller {
+
+
+
+<<<<<<< HEAD
 /**
  * summary
  */
@@ -58,6 +64,8 @@ class ViewController
   		require(URL_VIEW . "viewArtist/listArtist.php");
   		include URL_VIEW . 'footer.php';
     }
+=======
+>>>>>>> a5b2be7cf7f58dc8bf0991991863852c7785486f
 
 
 >>>>>>> 17a4373c224feb3e215537f8efd4dc977e669080

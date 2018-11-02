@@ -13,7 +13,7 @@
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <!-- se cambio el rol -->
-        <?php if(!empty($_SESSION)) {?>
+        <?php if($this->isLogged()) {?>
                 <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
                     <nav id="primary_nav_wrap">
                         <ul class="nav navbar-nav navbar-right" >
@@ -22,7 +22,7 @@
 
                             </li>
                             <li>
-                                <a class="page-scroll" style="color:orange" href="#"><?= $_SESSION['nickname'] ?> </a>
+                                <a class="page-scroll" style="color:orange" href="#"><?= $this->getToken()->getUsername() ?> </a>
                                 <ul>
                                     <li><a href="#">opciones</a></li>
                                 </ul>

@@ -10,8 +10,12 @@ use helpers\Session as Session;
 use model\Artist;
 use dao\ArtistDAO;
 use helpers\Session;
+<<<<<<< HEAD
 use controller\ViewController as ViewController;
 >>>>>>> 17a4373c224feb3e215537f8efd4dc977e669080
+=======
+//use controller\ViewController as ViewController;
+>>>>>>> a5b2be7cf7f58dc8bf0991991863852c7785486f
 
 class ArtistController{
 
