@@ -2,29 +2,25 @@
 
 namespace controller;
 
-use model\Artist;
-use dao\ArtistDAO;
-use helpers\Session;
-//use controller\ViewController as ViewController;
+use model\Artist as Artist;
+use dao\ArtistDAO as ArtistDAO;
+use controller\Controller as Controller;
 
-class ArtistController{
+class ArtistController extends Controller{
 
 	private $artistDao;
-	private $session;
-	private $viewController;
 
 	public function __construct()
 	{
-		$this->session = Session::getInstance();
+		parent::__construct();
 		$this->artistDao = ArtistDAO::getInstance(); // te devuelve la instancia de la bbdd de artista
-		$this->viewController = new ViewController();
 	}
 
 	public function save($name)
 	{
 
 		$nuevoArtist = new Artist($name);
-		$mensaje[0] = "EL ARTISTA SE AGREGO CON EXITO !! :D ";
+		$mensaje[0] = "El artista se ha agregado exitosamente :D ";
 		$mensaje[1] = "success";
 		try{
 			$this->artistDao->create($nuevoArtist);
@@ -37,9 +33,9 @@ class ArtistController{
 			$mensaje[1] = "danger";
 		}
 
-		//include URL_VIEW . 'header.php';
-		//require(URL_VIEW . "artist.php");
-		//include URL_VIEW . 'footer.php';
+		include URL_VIEW . 'header.php';
+		require(URL_VIEW . "viewArtist/artistCreate.php");
+		include URL_VIEW . 'footer.php';
 	}
 
 	public function create()
@@ -47,7 +43,9 @@ class ArtistController{
 		//if($this->session->__isset('rol')){
 		//	$rol = $this->session->__get('rol');
 		//	if($rol === 'admin'){
-		$this->viewController->viewArtist();
+		include URL_VIEW . 'header.php';
+		require(URL_VIEW . "viewArtist/artistCreate.php");
+		include URL_VIEW . 'footer.php';
 		//	}else {
 		//		echo "NO TENES SUFICIENTES PRIVILEGIOS";
 		//	}
@@ -61,7 +59,9 @@ class ArtistController{
 	{
 		$listArtists = $this->artistDao->readAll();
 
-		$this->viewController->listArtists($listArtists);
+		include URL_VIEW . 'header.php';
+		require(URL_VIEW . "viewArtist/listArtist.php");
+		include URL_VIEW . 'footer.php';
 
 	}
 

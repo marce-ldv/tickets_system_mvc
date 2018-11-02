@@ -27,7 +27,7 @@
                  * Si el array tiene elementos, el primero lo guardamos en controller, si no, guardamos Home como controller por defecto
                  */
                 if(empty($ArregloUrl)) {
-                     $this->controller = 'user';
+                     $this->controller = 'default';
                 } else {
                      $this->controller = ucwords(array_shift($ArregloUrl));
                 }
