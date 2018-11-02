@@ -60,7 +60,7 @@ class ArtistDAO extends SingletonDAO implements ICrud
 	{
 		try {
 
-			$sql = "SELECT * FROM $this->table WHERE artists_id = $id";
+			$sql = "SELECT * FROM $this->table WHERE id_artist = $id";
 
 			$pdo = new Connection(); // <- en vez de esta y
 			$connection = $pdo->connect(); // esta linea se puede poner $connection = Connection::connect();
@@ -136,7 +136,8 @@ class ArtistDAO extends SingletonDAO implements ICrud
     {
     	try
     	{
-    		$sql = "UPDATE this->table SET name = :name WHERE id_artist = :id ";
+
+    		$sql = "UPDATE $this->table SET name = :name WHERE id_artist = :id ";
 
 			$connection = Connection::connect();
     		$statement = $connection->prepare($sql);
@@ -145,7 +146,7 @@ class ArtistDAO extends SingletonDAO implements ICrud
     		$id = $value->getIdArtist();
 
     		$statement->bindParam(":name",$name);
-    		$statement->binParam(":id",$id);
+    		$statement->bindParam(":id",$id);
 
     		$statement->execute();
     	}
@@ -165,15 +166,25 @@ class ArtistDAO extends SingletonDAO implements ICrud
 	{
 		try
 		{
-			$sql = "DELETE FROM $this->table WHERE id_artist = $id "; // si es un string poner \" $id \";
+			$sql = "DELETE FROM $this->table WHERE id_artist = :id "; // si es un string poner \" $id \";
 
 			$connection = Connection::connect();
 			$statement = $connection->prepare($sql);
 
+    		$statement->bindParam(":id", $id);
 
+			$statement->execute();
 
-			$statement->execute;
-		}catch(\PDOException $e){}
+		}catch(\PDOException $e)
+		{
+			echo $e->getMessage();
+    		die();
+		}
+		catch(Exception $e)
+		{
+			echo $e->getMessage();
+			die();
+		}
 	}
 
 	public function mapMethod($dataSet)
