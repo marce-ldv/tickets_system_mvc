@@ -32,5 +32,3 @@ date_default_timezone_set('America/Argentina/Buenos_Aires');
 
 Autoload::start();
 Router::go(new Request());
-
-print_r($_SESSION);

@@ -3,6 +3,7 @@
 namespace controller;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use model\Artist as Artist;
 use dao\ArtistDAO as ArtistDAO;
 use helpers\Session as Session;
@@ -16,10 +17,16 @@ use controller\ViewController as ViewController;
 =======
 //use controller\ViewController as ViewController;
 >>>>>>> a5b2be7cf7f58dc8bf0991991863852c7785486f
+=======
+use model\Artist as Artist;
+use dao\ArtistDAO as ArtistDAO;
+use controller\Controller as Controller;
+>>>>>>> 03de3388d37319ece6819a8db69389fb955fc6b9
 
-class ArtistController{
+class ArtistController extends Controller{
 
 	private $artistDao;
+<<<<<<< HEAD
 	private $session;
 <<<<<<< HEAD
 
@@ -87,19 +94,20 @@ class ArtistController{
     } 
 =======
 	private $viewController;
+=======
+>>>>>>> 03de3388d37319ece6819a8db69389fb955fc6b9
 
 	public function __construct()
 	{
-		$this->session = Session::getInstance();
+		parent::__construct();
 		$this->artistDao = ArtistDAO::getInstance(); // te devuelve la instancia de la bbdd de artista
-		$this->viewController = new ViewController();
 	}
 
 	public function save($name)
 	{
 
 		$nuevoArtist = new Artist($name);
-		$mensaje[0] = "EL ARTISTA SE AGREGO CON EXITO !! :D ";
+		$mensaje[0] = "El artista se ha agregado exitosamente :D ";
 		$mensaje[1] = "success";
 		try{
 			$this->artistDao->create($nuevoArtist);
@@ -112,9 +120,9 @@ class ArtistController{
 			$mensaje[1] = "danger";
 		}
 
-		//include URL_VIEW . 'header.php';
-		//require(URL_VIEW . "artist.php");
-		//include URL_VIEW . 'footer.php';
+		include URL_VIEW . 'header.php';
+		require(URL_VIEW . "viewArtist/artistCreate.php");
+		include URL_VIEW . 'footer.php';
 	}
 
 	public function create()
@@ -122,7 +130,9 @@ class ArtistController{
 		//if($this->session->__isset('rol')){
 		//	$rol = $this->session->__get('rol');
 		//	if($rol === 'admin'){
-		$this->viewController->viewArtist();
+		include URL_VIEW . 'header.php';
+		require(URL_VIEW . "viewArtist/artistCreate.php");
+		include URL_VIEW . 'footer.php';
 		//	}else {
 		//		echo "NO TENES SUFICIENTES PRIVILEGIOS";
 		//	}
@@ -136,7 +146,9 @@ class ArtistController{
 	{
 		$listArtists = $this->artistDao->readAll();
 
-		$this->viewController->listArtists($listArtists);
+		include URL_VIEW . 'header.php';
+		require(URL_VIEW . "viewArtist/listArtist.php");
+		include URL_VIEW . 'footer.php';
 
 	}
 >>>>>>> 17a4373c224feb3e215537f8efd4dc977e669080

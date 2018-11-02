@@ -55,17 +55,17 @@ class UserController extends Controller{
       $user= $this->userDao->readByUser($username);
       //$session->user = $this->user_dao->serialize();
       if( ! $user ){
-        $this->viewController->register();
+        $this->redirect('/default/register');
       }
 
       if(password_verify($pass,$user->getPassword() ) ){
         //una vez que verifico que las password coinciden, antes de autoredireccionar al usuario, trabajamos con session
         $this->session->token = $user->serialize();
 
-        $this->viewController->dashboard();
+        $this->redirect('/default/dashboard');
 
       }else{
-        $this->viewController->login();
+        $this->redirect('/default/login');
       }
 
     } catch(\PDOException $pdo_error) {
@@ -110,7 +110,7 @@ class UserController extends Controller{
       }
 
     } catch(\PDOException $pdo_error) {
-      $this->viewController->registrarse();
+      $this->redirect('/default/register');
     } catch(\Exception $error) {
       echo $error->getMessage();
       die();
@@ -151,6 +151,10 @@ class UserController extends Controller{
 
   }
 
-
+  public function logout()
+  {
+    $this->session->destroy();
+    $this->redirect('/');
+  }
 
 }
