@@ -6,8 +6,8 @@ class Artist
 	private $id_artist;
 	private $name;
 
-    public function __construct($nameReceived){
-    	$this->name = $nameReceived;
+    public function __construct($nameRecib){
+    	$this->name = $nameRecib;
     }
 
     //getters
@@ -24,14 +24,14 @@ class Artist
 
     //setters
 
-    public function setIdArtist($idArtistReceived)
+    public function setIdArtist($idArtistRecib)
     {
-    	$this->id_artist = $idArtistReceived;
+    	$this->id_artist = $idArtistRecib;
     }
 
-    public function setNameArtist($nameReceived)
+    public function setNameArtist($nameRecib)
     {
-    	$this->name = $nameReceived;
+    	$this->name = $nameRecib;
     }
 
 }

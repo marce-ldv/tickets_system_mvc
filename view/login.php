@@ -8,7 +8,7 @@
 			<hr class="primary">
 			<p>
 				<strong style="color:white">
-					Logueate.
+					Iniciar Sesion.
 				</strong>
 			</p>
 			<div class="regularform">
