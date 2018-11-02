@@ -6,7 +6,7 @@ use model\User as User;
 use controller\Controller as Controller;
 
 // TODO: HAY QUE MODIFICAR LA LLAMADA A LAS VISTAS, DEBE LLAMAR AL METODO DE LA CONTROLADORA Y NO USAR REQUIRED NI INCLUDE
-class UserController extends /Controller{
+class UserController extends Controller{
 
   public $messageSucess = "Registro Exitoso";
   public $messageWrong = "Hubo un problema y no se pudo completar el registro";
@@ -21,7 +21,7 @@ class UserController extends /Controller{
   }
 
   public function index(){
-    $this->viewController->index();
+    $this->indexView();
   }
 
   public function login($username,$pass){

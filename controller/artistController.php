@@ -5,7 +5,7 @@ namespace controller;
 use model\Artist;
 use dao\ArtistDAO;
 use helpers\Session;
-use controller\ViewController as ViewController;
+//use controller\ViewController as ViewController;
 
 class ArtistController{
 
